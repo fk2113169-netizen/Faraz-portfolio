@@ -1,4 +1,5 @@
 const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 
 module.exports = async (req, res) => {
     // Enable CORS
@@ -26,23 +27,54 @@ module.exports = async (req, res) => {
         return res.status(400).json({ success: false, error: 'Missing required fields' });
     }
 
+    // Try Resend first if API key is provided
+    const resendApiKey = process.env.RESEND_API_KEY;
+    if (resendApiKey) {
+        try {
+            const resend = new Resend(resendApiKey);
+            const { data, error } = await resend.emails.send({
+                from: 'onboarding@resend.dev',
+                to: 'farazahmed54@gmail.com',
+                reply_to: email,
+                subject: `New Portfolio Message from ${name}`,
+                text: `Subject: New Portfolio Message from ${name}\nFrom: ${email}\nMessage:\n${message}\nTime: ${time || new Date().toLocaleString()}\n`
+            });
+
+            if (error) {
+                console.error('Resend Error Response:', error);
+                throw new Error(error.message);
+            }
+
+            console.log('Email sent successfully via Resend API:', data.id);
+            return res.status(200).json({ success: true, message: 'Email sent successfully via Resend' });
+        } catch (resendError) {
+            console.error('Failed to send email via Resend API:', resendError);
+            return res.status(500).json({ 
+                success: false, 
+                error: 'Failed to send email via Resend API.',
+                details: resendError.message 
+            });
+        }
+    }
+
+    // Otherwise, try Gmail SMTP
     const gmailUser = process.env.GMAIL_USER;
-    const gmailPass = process.env.GMAIL_PASS; // This must be a Gmail App Password
+    const gmailPass = process.env.GMAIL_PASS; // App Password
 
     if (!gmailUser || !gmailPass) {
-        console.error('SMTP Error: GMAIL_USER or GMAIL_PASS environment variables are not configured.');
+        console.error('SMTP/Resend Error: No environment variables configured (RESEND_API_KEY or GMAIL_USER/GMAIL_PASS missing).');
         return res.status(500).json({ 
             success: false, 
-            error: 'SMTP credentials missing. Please configure GMAIL_USER and GMAIL_PASS in your Vercel Environment Variables.' 
+            error: 'Backend unconfigured. Please set RESEND_API_KEY or GMAIL_USER/GMAIL_PASS in Vercel Environment Variables.' 
         });
     }
 
-    // Create Transporter
+    // Create Transporter for Gmail SMTP
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         host: 'smtp.gmail.com',
         port: 465,
-        secure: true, // Use SSL
+        secure: true, // SSL
         auth: {
             user: gmailUser,
             pass: gmailPass
@@ -52,7 +84,6 @@ module.exports = async (req, res) => {
     // Verify SMTP connection configuration
     try {
         await transporter.verify();
-        console.log('SMTP connection verified successfully.');
     } catch (verifyError) {
         console.error('SMTP Connection/Authentication Error:', verifyError);
         return res.status(500).json({ 
@@ -62,9 +93,9 @@ module.exports = async (req, res) => {
         });
     }
 
-    // Email content layout
+    // Email content options
     const mailOptions = {
-        from: `"${name}" <${gmailUser}>`, // Must be from gmailUser because Google rewrites the 'from' address
+        from: `"${name}" <${gmailUser}>`,
         to: 'farazahmed54@gmail.com',
         replyTo: email,
         subject: `New Portfolio Message from ${name}`,
@@ -74,10 +105,10 @@ module.exports = async (req, res) => {
     // Send Mail
     try {
         const info = await transporter.sendMail(mailOptions);
-        console.log('Email sent successfully:', info.messageId);
-        return res.status(200).json({ success: true, message: 'Email sent successfully' });
+        console.log('Email sent successfully via Gmail SMTP:', info.messageId);
+        return res.status(200).json({ success: true, message: 'Email sent successfully via Gmail' });
     } catch (sendError) {
-        console.error('Failed to send email:', sendError);
+        console.error('Failed to send email via Gmail SMTP:', sendError);
         return res.status(500).json({ 
             success: false, 
             error: 'Failed to send email via SMTP service.',

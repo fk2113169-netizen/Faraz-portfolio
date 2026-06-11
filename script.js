@@ -200,7 +200,43 @@ document.addEventListener('DOMContentLoaded', () => {
             time: new Date().toLocaleString()
         };
 
-        // Fallback email route helper
+        // Fallback 2: Native HTML Form Submit (Redirects to FormSubmit verification screen)
+        const triggerNativeFormSubmit = () => {
+            console.log('AJAX failed, triggering native form submit as final resort.');
+            
+            // Set form attributes temporarily
+            contactForm.action = "https://formsubmit.co/farazahmed54@gmail.com";
+            contactForm.method = "POST";
+            
+            // Create hidden inputs for formsubmit config
+            const subjectInput = document.createElement('input');
+            subjectInput.type = 'hidden';
+            subjectInput.name = '_subject';
+            subjectInput.value = `New Portfolio Message from ${nameVal}`;
+            contactForm.appendChild(subjectInput);
+
+            const replyToInput = document.createElement('input');
+            replyToInput.type = 'hidden';
+            replyToInput.name = '_replyto';
+            replyToInput.value = emailVal;
+            contactForm.appendChild(replyToInput);
+
+            const timeInput = document.createElement('input');
+            timeInput.type = 'hidden';
+            timeInput.name = 'Time';
+            timeInput.value = new Date().toLocaleString();
+            contactForm.appendChild(timeInput);
+            
+            // Ensure inputs in the form have name attributes so FormSubmit parses them
+            document.getElementById('form-name').name = "name";
+            document.getElementById('form-email').name = "email";
+            document.getElementById('form-message').name = "message";
+
+            // Submit the form natively
+            contactForm.submit();
+        };
+
+        // Fallback 1: FormSubmit.co AJAX (JSON or URLSearchParams)
         const triggerFormSubmitFallback = (name, email, message) => {
             fetch("https://formsubmit.co/ajax/farazahmed54@gmail.com", {
                 method: "POST",
@@ -235,16 +271,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     displayNotification(`Thank you, ${name}! Your message has been sent successfully.`, 'success');
                     contactForm.reset();
                 } else {
-                    displayNotification('Oops! Something went wrong. Please try again.', 'error');
+                    // If AJAX fallback returns error, use native submit
+                    triggerNativeFormSubmit();
                 }
             })
             .catch(err => {
-                console.error('Fallback failed:', err);
-                displayNotification('Could not send message. Please check your connection and try again.', 'error');
+                console.warn('AJAX Fallback failed, trying native redirect:', err);
+                triggerNativeFormSubmit();
             });
         };
 
-        // Try serverless API first
+        // Primary Route: Serverless API first
         fetch("/api/send-email", {
             method: "POST",
             headers: { 

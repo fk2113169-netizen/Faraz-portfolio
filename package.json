@@ -4,6 +4,7 @@
   "description": "Faraz Ahmed Professional Portfolio",
   "main": "index.html",
   "dependencies": {
-    "nodemailer": "^6.9.13"
+    "nodemailer": "^6.9.13",
+    "resend": "^3.2.0"
   }
 }
