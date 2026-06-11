@@ -196,10 +196,10 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch("https://formsubmit.co/ajax/farazahmed54@gmail.com", {
             method: "POST",
             headers: { 
-                "Content-Type": "application/json",
+                "Content-Type": "application/x-www-form-urlencoded",
                 "Accept": "application/json"
             },
-            body: JSON.stringify({
+            body: new URLSearchParams({
                 _subject: `New Portfolio Message from ${nameVal}`,
                 _replyto: emailVal,
                 "From": emailVal,
@@ -207,8 +207,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Time": new Date().toLocaleString()
             })
         })
-        .then(response => response.json())
-        .then(data => {
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(text => {
+            let data;
+            try {
+                data = JSON.parse(text);
+            } catch (e) {
+                if (text.includes("success") || text.includes("activate") || text.includes("confirm")) {
+                    data = { success: true };
+                } else {
+                    data = { success: false };
+                }
+            }
             if (data.success === "true" || data.success === true) {
                 displayNotification(`Thank you, ${nameVal}! Your message has been sent successfully.`, 'success');
                 contactForm.reset();
