@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faraz Ahmed | AI Systems Engineer & Agentic Workflow Developer</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Faraz Ahmed - AI Systems Engineer & Agentic Workflow Developer based in Islamabad, Pakistan. Specializing in Python, agentic AI, LLM systems, n8n automation, and resilient software architectures.">
+    <meta name="keywords" content="Faraz Ahmed, AI Systems Engineer, Agentic AI, Agentic Workflows, Vibe Coding, LLM Engineer, n8n, Python Developer, Software Architect, Supabase, Islamabad, Pakistan">
+    <meta name="author" content="Faraz Ahmed">
+    <link rel="canonical" href="https://farazahmed.dev">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://farazahmed.dev">
+    <meta property="og:title" content="Faraz Ahmed | AI Systems Engineer & Agentic Workflow Developer">
+    <meta property="og:description" content="Building AI-driven applications and resilient software systems through agentic workflows and modern deployment ecosystems.">
+    <meta property="og:image" content="https://farazahmed.dev/assets/portfolio-preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://farazahmed.dev">
+    <meta property="twitter:title" content="Faraz Ahmed | AI Systems Engineer & Agentic Workflow Developer">
+    <meta property="twitter:description" content="Building AI-driven applications and resilient software systems through agentic workflows and modern deployment ecosystems.">
+    <meta property="twitter:image" content="https://farazahmed.dev/assets/portfolio-preview.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-primary text-primary font-sans antialiased overflow-x-hidden transition-colors duration-300">
+
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-header border-b border-default backdrop-blur-md transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#home" class="text-2xl font-display font-extrabold tracking-tight bg-gradient bg-clip-text text-transparent hover:opacity-90 transition-opacity">
+                FARAZ<span class="text-accent">.</span>AHMED
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#about" class="text-sm font-medium text-secondary hover:text-accent transition-colors">About</a>
+                <a href="#expertise" class="text-sm font-medium text-secondary hover:text-accent transition-colors">Expertise</a>
+                <a href="#projects" class="text-sm font-medium text-secondary hover:text-accent transition-colors">Projects</a>
+                <a href="#education" class="text-sm font-medium text-secondary hover:text-accent transition-colors">Education</a>
+                <a href="#experience" class="text-sm font-medium text-secondary hover:text-accent transition-colors">Experience</a>
+                <a href="#contact" class="text-sm font-medium text-secondary hover:text-accent transition-colors">Contact</a>
+            </nav>
+
+            <!-- Theme Toggle and CTA -->
+            <div class="hidden md:flex items-center space-x-6">
+                <!-- Light/Dark Mode Switcher -->
+                <button id="theme-toggle" class="p-2.5 rounded-xl border border-default bg-tertiary hover:bg-hover hover:border-accent text-secondary hover:text-accent transition-all duration-300" aria-label="Toggle visual theme">
+                    <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                    <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+                </button>
+                <a href="#contact" class="btn btn-primary btn-sm">Let's Build</a>
+            </div>
+
+            <!-- Mobile Menu Actions -->
+            <div class="flex items-center space-x-4 md:hidden">
+                <button id="theme-toggle-mobile" class="p-2 rounded-xl border border-default bg-tertiary text-secondary" aria-label="Toggle theme">
+                    <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+                    <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+                </button>
+                <button id="menu-btn" class="p-2 rounded-xl border border-default bg-tertiary text-secondary hover:text-accent transition-colors" aria-label="Open menu">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-header border-b border-default backdrop-blur-lg transition-all duration-300">
+            <nav class="flex flex-col space-y-4 px-6 py-6">
+                <a href="#about" class="mobile-nav-link">About</a>
+                <a href="#expertise" class="mobile-nav-link">Expertise</a>
+                <a href="#projects" class="mobile-nav-link">Projects</a>
+                <a href="#education" class="mobile-nav-link">Education</a>
+                <a href="#experience" class="mobile-nav-link">Experience</a>
+                <a href="#contact" class="mobile-nav-link">Contact</a>
+                <a href="#contact" class="btn btn-primary text-center">Let's Build</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center pt-24 overflow-hidden">
+        <canvas id="hero-canvas" class="absolute inset-0 z-0 pointer-events-auto"></canvas>
+        <div class="absolute inset-0 bg-hero-gradient z-1"></div>
+
+        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 grid md:grid-cols-12 gap-12 items-center py-12">
+            <div class="md:col-span-8 flex flex-col space-y-6 md:space-y-8 text-left">
+                <div class="inline-flex items-center space-x-2 bg-accent-soft border border-accent-soft-border px-4 py-2 rounded-full w-fit animate-fade-in">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                    </span>
+                    <span class="text-xs md:text-sm font-semibold tracking-wider text-accent uppercase font-display">Available for Freelance & Deployments</span>
+                </div>
+
+                <div class="space-y-4">
+                    <h1 class="text-4xl sm:text-5xl md:text-7xl font-display font-extrabold tracking-tight leading-none">
+                        Hi, I'm <span class="bg-gradient bg-clip-text text-transparent">Faraz Ahmed</span>
+                    </h1>
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-secondary flex items-center flex-wrap">
+                        I am a&nbsp;<span id="typewriter" class="text-accent border-r-2 border-accent pr-1 animate-pulse"></span>
+                    </h2>
+                </div>
+
+                <p class="text-lg md:text-xl text-secondary max-w-2xl leading-relaxed">
+                    Building AI-driven applications and resilient software systems through agentic workflows and modern deployment ecosystems. Specializing in production-grade LLM architectures.
+                </p>
+
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#projects" class="btn btn-primary flex items-center space-x-2">
+                        <span>View Projects</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </a>
+                    <a href="resume.html" target="_blank" class="btn btn-secondary flex items-center space-x-2">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        <span>Download CV</span>
+                    </a>
+                    <a href="#contact" class="btn btn-tertiary flex items-center space-x-2">
+                        <span>Get in Touch</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Interactive Terminal Preview -->
+            <div class="md:col-span-4 hidden lg:block">
+                <div class="glass-card p-4 rounded-2xl border border-default shadow-2xl relative overflow-hidden animate-float">
+                    <div class="flex items-center justify-between border-b border-default pb-3 mb-4">
+                        <div class="flex space-x-1.5">
+                            <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                        </div>
+                        <span class="text-xs text-secondary font-mono">agentic-cli v1.0.4</span>
+                    </div>
+                    <div class="font-mono text-xs space-y-2.5 text-secondary">
+                        <p class="text-accent-green">$ npx antigravity run portfolio</p>
+                        <p class="text-white">&gt; Compiling design tokens...</p>
+                        <p class="text-white">&gt; Initializing theme: dark (default)</p>
+                        <p class="text-white">&gt; Activating agentic neural network...</p>
+                        <p class="text-accent-yellow">&gt; Environment: Islamabad, PK</p>
+                        <div class="p-3 bg-primary rounded-lg border border-default mt-4 space-y-1.5">
+                            <p class="text-accent font-semibold">system_status: online</p>
+                            <p class="text-white">vibe_coding: active</p>
+                            <p class="text-white">workflows: 8 deployed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-24 border-t border-default bg-secondary relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h3 class="text-sm font-semibold tracking-wider text-accent uppercase font-display">About Me</h3>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold">Engineering Intelligent Systems</h2>
+                <div class="w-16 h-1.5 bg-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                <!-- Text Area -->
+                <div class="lg:col-span-7 space-y-6">
+                    <h3 class="text-2xl font-display font-bold">My Professional Philosophy</h3>
+                    <p class="text-secondary leading-relaxed">
+                        I am an AI Systems Engineer and Agentic Workflow Developer with a passion for designing intelligent, autonomous software pipelines. I specialize in bridging the gap between raw LLM capabilities and practical, resilient B2B applications. 
+                    </p>
+                    <p class="text-secondary leading-relaxed">
+                        In the era of AI, I practice <strong>"Vibe Coding"</strong>—leveraging advanced agentic tooling to iterate quickly, deploy rapidly, and focus on high-level system architecture and system logic rather than repetitive syntax. I believe in engineering robust systems that stand the test of stress, scale, and time.
+                    </p>
+                    
+                    <div class="glass-card p-6 border-l-4 border-accent rounded-r-xl">
+                        <h4 class="font-display font-bold text-lg mb-2 flex items-center space-x-2">
+                            <i data-lucide="zap" class="w-5 h-5 text-accent"></i>
+                            <span>The "Vibe Coding" Philosophy</span>
+                        </h4>
+                        <p class="text-sm text-secondary leading-relaxed">
+                            It's not just about typing code; it's about orchestration. By leveraging AI-assisted development tools (like Antigravity and Claude) along with structured deployment runtimes, I design, construct, and launch production SaaS platforms in fractions of the traditional development lifecycle.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Profile Statistics & Badges -->
+                <div class="lg:col-span-5 space-y-8">
+                    <div class="glass-card p-8 rounded-2xl border border-default grid grid-cols-2 gap-6">
+                        <div class="text-center p-4 bg-primary rounded-xl border border-default hover:border-accent transition-colors">
+                            <span class="block text-3xl font-display font-extrabold text-accent">4+</span>
+                            <span class="text-xs text-secondary uppercase font-semibold">Core Projects</span>
+                        </div>
+                        <div class="text-center p-4 bg-primary rounded-xl border border-default hover:border-accent transition-colors">
+                            <span class="block text-3xl font-display font-extrabold text-accent">200+</span>
+                            <span class="text-xs text-secondary uppercase font-semibold">Students Mentored</span>
+                        </div>
+                        <div class="text-center p-4 bg-primary rounded-xl border border-default hover:border-accent transition-colors">
+                            <span class="block text-3xl font-display font-extrabold text-accent">99%</span>
+                            <span class="text-xs text-secondary uppercase font-semibold">Deployment Uptime</span>
+                        </div>
+                        <div class="text-center p-4 bg-primary rounded-xl border border-default hover:border-accent transition-colors">
+                            <span class="block text-3xl font-display font-extrabold text-accent">10x</span>
+                            <span class="text-xs text-secondary uppercase font-semibold">Velocity Boost</span>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="font-display font-bold text-lg">Core Focus Areas</h4>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="badge badge-accent">Python Development</span>
+                            <span class="badge badge-accent">LLM Architectures</span>
+                            <span class="badge badge-accent">Agentic Workflows</span>
+                            <span class="badge badge-accent">SaaS Backend Logic</span>
+                            <span class="badge badge-accent">System Architecture</span>
+                            <span class="badge badge-accent">Automation (n8n/Make)</span>
+                            <span class="badge badge-accent">Database Design (Supabase)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Expertise Section -->
+    <section id="expertise" class="py-24 border-t border-default relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h3 class="text-sm font-semibold tracking-wider text-accent uppercase font-display">Technical Expertise</h3>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold">My Tech Ecosystem</h2>
+                <div class="w-16 h-1.5 bg-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Agentic AI & LLMs -->
+                <div class="glass-card p-8 rounded-2xl border border-default flex flex-col justify-between hover:border-accent transition-all duration-300 group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-accent-soft flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="cpu" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-4">Agentic AI & LLMs</h3>
+                        <p class="text-secondary text-sm mb-6 leading-relaxed">Developing sophisticated prompt engineering pipelines, agentic orchestration, and memory-enhanced systems.</p>
+                        <ul class="space-y-3.5">
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Claude & Anthropic API</li>
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Google AI Studio (Gemini)</li>
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> LangChain & CrewAI</li>
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Custom Agentic Workflows</li>
+                        </ul>
+                    </div>
+                    <!-- Animated skill bar -->
+                    <div class="mt-8 pt-4 border-t border-default">
+                        <div class="flex justify-between text-xs font-semibold mb-2">
+                            <span>Proficiency</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full bg-tertiary h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-gradient h-full rounded-full animate-skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Automation & Integration -->
+                <div class="glass-card p-8 rounded-2xl border border-default flex flex-col justify-between hover:border-accent transition-all duration-300 group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-accent-soft flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="git-merge" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-4">Automation & Integration</h3>
+                        <p class="text-secondary text-sm mb-6 leading-relaxed">Designing end-to-end data pipelines and API automations to replace manual workflows with bulletproof integrations.</p>
+                        <ul class="space-y-3.5">
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> n8n (Self-hosted & Cloud)</li>
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Zapier & Make.com</li>
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Pipedream Event Handling</li>
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Webhooks & API Integration</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-default">
+                        <div class="flex justify-between text-xs font-semibold mb-2">
+                            <span>Proficiency</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="w-full bg-tertiary h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-gradient h-full rounded-full animate-skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vibe Coding & Deployment -->
+                <div class="glass-card p-8 rounded-2xl border border-default flex flex-col justify-between hover:border-accent transition-all duration-300 group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-accent-soft flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="rocket" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-4">Vibe Coding & Deployment</h3>
+                        <p class="text-secondary text-sm mb-6 leading-relaxed">Deploying code instantly under active AI augmentation, managing CI/CD pipelines and sandboxed development.</p>
+                        <ul class="space-y-3.5">
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Vercel & Netlify</li>
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Replit Environments</li>
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Antigravity CLI Tooling</li>
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> GitHub Actions & CI/CD</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-default">
+                        <div class="flex justify-between text-xs font-semibold mb-2">
+                            <span>Proficiency</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-tertiary h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-gradient h-full rounded-full animate-skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages & Backend -->
+                <div class="glass-card p-8 rounded-2xl border border-default flex flex-col justify-between hover:border-accent transition-all duration-300 group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-accent-soft flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="database" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-4">Languages & Backend</h3>
+                        <p class="text-secondary text-sm mb-6 leading-relaxed">Writing high-performance server logic, relational database schemas, and robust backend integrations.</p>
+                        <ul class="space-y-3.5">
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Python (FastAPI, Django)</li>
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Supabase / PostgreSQL</li>
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Java & C++</li>
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> RESTful API Architectures</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-default">
+                        <div class="flex justify-between text-xs font-semibold mb-2">
+                            <span>Proficiency</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full bg-tertiary h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-gradient h-full rounded-full animate-skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Core Fundamentals -->
+                <div class="glass-card p-8 rounded-2xl border border-default flex flex-col justify-between hover:border-accent transition-all duration-300 group">
+                    <div>
+                        <div class="w-12 h-12 rounded-xl bg-accent-soft flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
+                            <i data-lucide="code" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-xl font-display font-bold mb-4">Core Fundamentals</h3>
+                        <p class="text-secondary text-sm mb-6 leading-relaxed">Applying computer science foundation principles to optimize algorithmic complexity and database query execution.</p>
+                        <ul class="space-y-3.5">
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Data Structures & Algorithms</li>
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> System Design Patterns</li>
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Low-level optimization</li>
+                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Concurrent Programming</li>
+                        </ul>
+                    </div>
+                    <div class="mt-8 pt-4 border-t border-default">
+                        <div class="flex justify-between text-xs font-semibold mb-2">
+                            <span>Proficiency</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="w-full bg-tertiary h-1.5 rounded-full overflow-hidden">
+                            <div class="bg-gradient h-full rounded-full animate-skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="py-24 border-t border-default bg-secondary relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
+                <h3 class="text-sm font-semibold tracking-wider text-accent uppercase font-display">Portfolio</h3>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold">Featured Projects</h2>
+                <div class="w-16 h-1.5 bg-accent mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Project Filters -->
+            <div class="flex flex-wrap justify-center gap-3 mb-12">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="saas">B2B SaaS</button>
+                <button class="filter-btn" data-filter="open-source">Open Source</button>
+                <button class="filter-btn" data-filter="community">Community</button>
+                <button class="filter-btn" data-filter="live-deployment">Live Deployment</button>
+            </div>
+
+            <!-- Project Grid -->
+            <div class="grid md:grid-cols-2 gap-8" id="projects-grid">
+                
+                <!-- Project 1: AnswerEnginePro -->
+                <div class="project-card glass-card rounded-2xl border border-default overflow-hidden group" data-category="saas">
+                    <div class="p-8 flex flex-col h-full justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="badge badge-accent">B2B SaaS Platform</span>
+                                <div class="flex space-x-2">
+                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Python</span>
+                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Supabase</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-display font-extrabold mb-3 group-hover:text-accent transition-colors">AnswerEnginePro</h3>
+                            <p class="text-secondary text-sm leading-relaxed mb-6">
+                                Full-stack Answer Engine Optimization (AEO) platform built to track, monitor, and optimize online brand mentions across AI engines like ChatGPT, Claude, and Perplexity. Integrates scheduled crawler pipelines and custom vector database matching.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-6 border-t border-default">
+                            <span class="text-xs font-semibold text-accent uppercase tracking-wider flex items-center">
+                                <i data-lucide="server" class="w-4 h-4 mr-1.5"></i> Production Ready
+                            </span>
+                            <a href="#contact" class="text-sm font-semibold hover:text-accent flex items-center transition-colors">
+                                <span>Request Demo</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Semantic-Stream -->
+                <div class="project-card glass-card rounded-2xl border border-default overflow-hidden group" data-category="open-source">
+                    <div class="p-8 flex flex-col h-full justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="badge badge-accent">Token Compression</span>
+                                <div class="flex space-x-2">
+                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Python</span>
+                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">PyTorch</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-display font-extrabold mb-3 group-hover:text-accent transition-colors">Semantic-Stream</h3>
+                            <p class="text-secondary text-sm leading-relaxed mb-6">
+                                An open-source local pipeline tool optimizing LLM input efficiency. Implements real-time prompt pruning, semantic caching, and dynamic token compression to reduce API bills by up to 45% while preserving 98% semantic context integrity.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-6 border-t border-default">
+                            <span class="text-xs font-semibold text-accent uppercase tracking-wider flex items-center">
+                                <i data-lucide="star" class="w-4 h-4 mr-1.5"></i> GitHub Core
+                            </span>
+                            <a href="https://github.com" target="_blank" class="text-sm font-semibold hover:text-accent flex items-center transition-colors">
+                                <span>GitHub Repository</span>
+                                <i data-lucide="github" class="w-4 h-4 ml-1.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: chesshub -->
+                <div class="project-card glass-card rounded-2xl border border-default overflow-hidden group" data-category="community">
+                    <div class="p-8 flex flex-col h-full justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="badge badge-accent">Community Platform</span>
+                                <div class="flex space-x-2">
+                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Python</span>
+                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Supabase</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-display font-extrabold mb-3 group-hover:text-accent transition-colors">chesshub</h3>
+                            <p class="text-secondary text-sm leading-relaxed mb-6">
+                                A web application serving the Pakistani chess community. Supports digital tournament tracking, player profile management, competitive Elo calculations, and match schedules for regional and national competitive chess events.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-6 border-t border-default">
+                            <span class="text-xs font-semibold text-accent uppercase tracking-wider flex items-center">
+                                <i data-lucide="users" class="w-4 h-4 mr-1.5"></i> Active Users
+                            </span>
+                            <a href="#contact" class="text-sm font-semibold hover:text-accent flex items-center transition-colors">
+                                <span>Launch App</span>
+                                <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: DevSummit Live Deployment -->
+                <div class="project-card glass-card rounded-2xl border border-default overflow-hidden group" data-category="live-deployment">
+                    <div class="p-8 flex flex-col h-full justify-between">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <span class="badge badge-accent">Live Showcase</span>
+                                <div class="flex space-x-2">
+                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Replit</span>
+                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Vercel</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-display font-extrabold mb-3 group-hover:text-accent transition-colors">DevSummit Live Showcase</h3>
+                            <p class="text-secondary text-sm leading-relaxed mb-6">
+                                A functional web application designed, written, and deployed live on-stage during the Bahria University DevSummit. Created under extreme time constraints to demonstrate rapid "Vibe Coding" frameworks and automatic CI/CD deployment logic.
+                            </p>
+                        </div>
+                        <div class="flex items-center justify-between pt-6 border-t border-default">
+                            <span class="text-xs font-semibold text-accent uppercase tracking-wider flex items-center">
+                                <i data-lucide="award" class="w-4 h-4 mr-1.5"></i> Bahria DevSummit
+                            </span>
+                            <a href="#contact" class="text-sm font-semibold hover:text-accent flex items-center transition-colors">
+                                <span>Read Case Study</span>
+                                <i data-lucide="file-text" class="w-4 h-4 ml-1.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Education & Experience Grid Section -->
+    <section id="education" class="py-24 border-t border-default relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16">
+                
+                <!-- Education Column -->
+                <div class="space-y-12">
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-semibold tracking-wider text-accent uppercase font-display">Education</h3>
+                        <h2 class="text-3xl font-display font-extrabold">Academic Timeline</h2>
+                        <div class="w-16 h-1 bg-accent rounded-full"></div>
+                    </div>
+
+                    <div class="relative border-l border-default pl-6 sm:pl-8 space-y-12 ml-4">
+                        <!-- IQRA University -->
+                        <div class="relative group">
+                            <!-- Bullet Indicator -->
+                            <div class="absolute -left-10 sm:-left-12 top-1 w-4 h-4 rounded-full bg-primary border-4 border-accent group-hover:bg-accent transition-colors"></div>
+                            
+                            <span class="text-xs font-semibold text-accent bg-accent-soft px-2.5 py-1 rounded-md mb-2 inline-block">Feb 2024 – Mar 2028</span>
+                            <h4 class="text-xl font-display font-bold text-primary">Bachelors in Computer Science</h4>
+                            <p class="text-sm font-semibold text-secondary mb-3">IQRA University, Islamabad</p>
+                            <p class="text-secondary text-sm leading-relaxed">Focusing on core Software Engineering principles, Advanced Database Systems, Artificial Intelligence algorithms, and System Design patterns.</p>
+                        </div>
+
+                        <!-- Mazhar Muslim School -->
+                        <div class="relative group">
+                            <div class="absolute -left-10 sm:-left-12 top-1 w-4 h-4 rounded-full bg-primary border-4 border-accent group-hover:bg-accent transition-colors"></div>
+                            
+                            <span class="text-xs font-semibold text-accent bg-accent-soft px-2.5 py-1 rounded-md mb-2 inline-block">Oct 2020 – Jun 2022</span>
+                            <h4 class="text-xl font-display font-bold text-primary">FSc Pre-Engineering</h4>
+                            <p class="text-sm font-semibold text-secondary mb-3">Mazhar Muslim Model School and College</p>
+                            <p class="text-secondary text-sm leading-relaxed">Academic foundation focused heavily on advanced Mathematics, Analytical Physics, and Chemistry principles.</p>
+                        </div>
+
+                        <!-- Jinnah Grammar -->
+                        <div class="relative group">
+                            <div class="absolute -left-10 sm:-left-12 top-1 w-4 h-4 rounded-full bg-primary border-4 border-accent group-hover:bg-accent transition-colors"></div>
+                            
+                            <span class="text-xs font-semibold text-accent bg-accent-soft px-2.5 py-1 rounded-md mb-2 inline-block">Oct 2016 – Mar 2020</span>
+                            <h4 class="text-xl font-display font-bold text-primary">Matriculation (Computer Science)</h4>
+                            <p class="text-sm font-semibold text-secondary mb-3">Jinnah Grammar High School</p>
+                            <p class="text-secondary text-sm leading-relaxed">Introduction to Computer Architecture, Basic Programming Logic, and Algorithms.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Column -->
+                <div id="experience" class="space-y-12">
+                    <div class="space-y-4">
+                        <h3 class="text-sm font-semibold tracking-wider text-accent uppercase font-display">Experience</h3>
+                        <h2 class="text-3xl font-display font-extrabold">Professional Experience</h2>
+                        <div class="w-16 h-1 bg-accent rounded-full"></div>
+                    </div>
+
+                    <div class="relative border-l border-default pl-6 sm:pl-8 space-y-12 ml-4">
+                        <!-- Experience Card 1 -->
+                        <div class="relative group">
+                            <div class="absolute -left-10 sm:-left-12 top-1 w-4 h-4 rounded-full bg-primary border-4 border-accent group-hover:bg-accent transition-colors"></div>
+                            
+                            <span class="text-xs font-semibold text-accent bg-accent-soft px-2.5 py-1 rounded-md mb-2 inline-block">Jan 2024 – Feb 2024</span>
+                            <h4 class="text-xl font-display font-bold text-primary">Digital Marketer | Freelance</h4>
+                            <p class="text-sm font-semibold text-secondary mb-3">Self-Employed</p>
+                            <p class="text-secondary text-sm leading-relaxed mb-4">
+                                Implemented growth-oriented digital marketing strategies and lead generation funnels, integrating bespoke AI tools and APIs to automate content distribution and customer interaction systems.
+                            </p>
+                            <ul class="space-y-2 text-sm text-secondary">
+                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-accent mr-2"></i> Built custom Python web-scrapers for target lead profiling.</li>
+                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-accent mr-2"></i> Configured n8n database hooks to capture and categorize inbound requests.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials / Recognition Section -->
+    <section class="py-24 border-t border-default bg-secondary relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h3 class="text-sm font-semibold tracking-wider text-accent uppercase font-display">Recognition</h3>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold">Community Impact & Leadership</h2>
+                <div class="w-16 h-1.5 bg-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Recognition Item 1 -->
+                <div class="glass-card p-8 rounded-2xl border border-default flex flex-col justify-between hover:border-accent transition-colors duration-300">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="p-2.5 bg-accent-soft rounded-xl text-accent">
+                                <i data-lucide="users" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-lg text-primary">Technical Workshop Host</h4>
+                                <p class="text-xs text-secondary font-semibold">GitHub Optimization & Vibe Coding</p>
+                            </div>
+                        </div>
+                        <p class="text-secondary text-sm leading-relaxed mb-6 italic">
+                            "Hosted a specialized interactive technical workshop for over 200 university students. Covered GitHub workflow automation, collaborative branching, and how to utilize AI-augmented 'Vibe Coding' pipelines to double software design velocity while maintaining codebase integrity."
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-default">
+                        <span class="text-xs font-mono text-secondary">Audience: 200+ Students</span>
+                        <span class="text-xs font-semibold text-accent uppercase tracking-wider">Education Outreach</span>
+                    </div>
+                </div>
+
+                <!-- Recognition Item 2 -->
+                <div class="glass-card p-8 rounded-2xl border border-default flex flex-col justify-between hover:border-accent transition-colors duration-300">
+                    <div>
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div class="p-2.5 bg-accent-soft rounded-xl text-accent">
+                                <i data-lucide="message-square" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-display font-bold text-lg text-primary">Community Mentorship</h4>
+                                <p class="text-xs text-secondary font-semibold">Developer Mentoring & Advice</p>
+                            </div>
+                        </div>
+                        <p class="text-secondary text-sm leading-relaxed mb-6 italic">
+                            "Consistently advising peer programmers, college students, and tech enthusiasts on modern engineering standards. Dedicated to building an ecosystem that values logical fundamentals like Data Structures alongside advanced integrations like agentic n8n loops."
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-default">
+                        <span class="text-xs font-mono text-secondary">Islamabad Tech Ecosystem</span>
+                        <span class="text-xs font-semibold text-accent uppercase tracking-wider">Mentorship</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies, Skills & Languages Grid Section -->
+    <section class="py-24 border-t border-default relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Left Column: Certifications & Languages (5 cols) -->
+                <div class="lg:col-span-5 space-y-12">
+                    <!-- Certifications -->
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-display font-bold">Certifications</h3>
+                        <div class="space-y-4">
+                            <div class="glass-card p-4 rounded-xl border border-default flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="text-accent bg-accent-soft p-2 rounded-lg">
+                                        <i data-lucide="award" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-primary">AI using Python</h4>
+                                        <p class="text-xs text-secondary">DigiSkills.pk</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-semibold text-secondary bg-primary px-2.5 py-1 rounded-md border border-default">Verified</span>
+                            </div>
+
+                            <div class="glass-card p-4 rounded-xl border border-default flex items-center justify-between">
+                                <div class="flex items-center space-x-3">
+                                    <div class="text-accent bg-accent-soft p-2 rounded-lg">
+                                        <i data-lucide="target" class="w-5 h-5"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-primary">Digital Marketing</h4>
+                                        <p class="text-xs text-secondary">DigiSkills.pk</p>
+                                    </div>
+                                </div>
+                                <span class="text-xs font-semibold text-secondary bg-primary px-2.5 py-1 rounded-md border border-default">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Languages -->
+                    <div class="space-y-6">
+                        <h3 class="text-xl font-display font-bold">Languages</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="glass-card p-4 rounded-xl border border-default text-center">
+                                <h4 class="font-display font-bold text-sm text-primary">Balochi</h4>
+                                <span class="text-xs text-accent font-semibold">Native Speaker</span>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl border border-default text-center">
+                                <h4 class="font-display font-bold text-sm text-primary">Urdu</h4>
+                                <span class="text-xs text-accent font-semibold">Bilingual Proficiency</span>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl border border-default text-center">
+                                <h4 class="font-display font-bold text-sm text-primary">English</h4>
+                                <span class="text-xs text-accent font-semibold">Professional Working</span>
+                            </div>
+                            <div class="glass-card p-4 rounded-xl border border-default text-center">
+                                <h4 class="font-display font-bold text-sm text-primary">Sindhi</h4>
+                                <span class="text-xs text-accent font-semibold">Conversational</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Hobbies & Interests Grid (7 cols) -->
+                <div class="lg:col-span-7 space-y-6">
+                    <h3 class="text-xl font-display font-bold">Hobbies & Interests</h3>
+                    <p class="text-secondary text-sm mb-6">Beyond systems engineering, these disciplines help keep my cognitive focus sharp and analytical drive highly tuned.</p>
+                    
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                        <!-- Book Reading -->
+                        <div class="glass-card p-5 rounded-xl border border-default flex flex-col items-center justify-center text-center hover:border-accent transition-colors group">
+                            <div class="text-accent bg-accent-soft p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
+                                <i data-lucide="book-open" class="w-6 h-6"></i>
+                            </div>
+                            <h4 class="font-display font-bold text-sm text-primary">Book Reading</h4>
+                            <span class="text-xs text-secondary mt-1">Tech & Systems theory</span>
+                        </div>
+
+                        <!-- Chess -->
+                        <div class="glass-card p-5 rounded-xl border border-default flex flex-col items-center justify-center text-center hover:border-accent transition-colors group">
+                            <div class="text-accent bg-accent-soft p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
+                                <i data-lucide="crown" class="w-6 h-6"></i>
+                            </div>
+                            <h4 class="font-display font-bold text-sm text-primary">Chess</h4>
+                            <span class="text-xs text-secondary mt-1">Tactical analysis</span>
+                        </div>
+
+                        <!-- Bodybuilding -->
+                        <div class="glass-card p-5 rounded-xl border border-default flex flex-col items-center justify-center text-center hover:border-accent transition-colors group">
+                            <div class="text-accent bg-accent-soft p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
+                                <i data-lucide="dumbbell" class="w-6 h-6"></i>
+                            </div>
+                            <h4 class="font-display font-bold text-sm text-primary">Bodybuilding</h4>
+                            <span class="text-xs text-secondary mt-1">Discipline & Consistency</span>
+                        </div>
+
+                        <!-- Boxing -->
+                        <div class="glass-card p-5 rounded-xl border border-default flex flex-col items-center justify-center text-center hover:border-accent transition-colors group">
+                            <div class="text-accent bg-accent-soft p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
+                                <i data-lucide="shield" class="w-6 h-6"></i>
+                            </div>
+                            <h4 class="font-display font-bold text-sm text-primary">Boxing</h4>
+                            <span class="text-xs text-secondary mt-1">Reflexes & Stasis</span>
+                        </div>
+
+                        <!-- Cricket & Badminton -->
+                        <div class="glass-card p-5 rounded-xl border border-default flex flex-col items-center justify-center text-center hover:border-accent transition-colors group">
+                            <div class="text-accent bg-accent-soft p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
+                                <i data-lucide="activity" class="w-6 h-6"></i>
+                            </div>
+                            <h4 class="font-display font-bold text-sm text-primary">Sports</h4>
+                            <span class="text-xs text-secondary mt-1">Cricket & Badminton</span>
+                        </div>
+
+                        <!-- Photography -->
+                        <div class="glass-card p-5 rounded-xl border border-default flex flex-col items-center justify-center text-center hover:border-accent transition-colors group">
+                            <div class="text-accent bg-accent-soft p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
+                                <i data-lucide="camera" class="w-6 h-6"></i>
+                            </div>
+                            <h4 class="font-display font-bold text-sm text-primary">Photography</h4>
+                            <span class="text-xs text-secondary mt-1">Details & Perspective</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 border-t border-default bg-secondary relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                <h3 class="text-sm font-semibold tracking-wider text-accent uppercase font-display">Contact Me</h3>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold">Let's Build Something Amazing</h2>
+                <div class="w-16 h-1.5 bg-accent mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid lg:grid-cols-12 gap-12 items-stretch">
+                <!-- Info Column (5 cols) -->
+                <div class="lg:col-span-5 flex flex-col justify-between glass-card p-8 rounded-2xl border border-default">
+                    <div class="space-y-8">
+                        <div>
+                            <h4 class="font-display font-extrabold text-2xl mb-2">Get in Touch</h4>
+                            <p class="text-secondary text-sm leading-relaxed">Have an idea for an AI-powered SaaS platform, or need a workflow automation configured? Send a message and let's coordinate.</p>
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Email -->
+                            <div class="flex items-center space-x-4">
+                                <div class="w-11 h-11 bg-accent-soft text-accent rounded-xl flex items-center justify-center">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-xs text-secondary font-semibold uppercase">Email</span>
+                                    <a href="mailto:farazahmed54@gmail.com" class="text-primary hover:text-accent font-semibold transition-colors">farazahmed54@gmail.com</a>
+                                </div>
+                            </div>
+
+                            <!-- Phone -->
+                            <div class="flex items-center space-x-4">
+                                <div class="w-11 h-11 bg-accent-soft text-accent rounded-xl flex items-center justify-center">
+                                    <i data-lucide="phone" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-xs text-secondary font-semibold uppercase">Phone / WhatsApp</span>
+                                    <a href="tel:03337393471" class="text-primary hover:text-accent font-semibold transition-colors">03337393471</a>
+                                </div>
+                            </div>
+
+                            <!-- Location -->
+                            <div class="flex items-center space-x-4">
+                                <div class="w-11 h-11 bg-accent-soft text-accent rounded-xl flex items-center justify-center">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-xs text-secondary font-semibold uppercase">Location</span>
+                                    <span class="text-primary font-semibold">Islamabad, Pakistan</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Handles -->
+                    <div class="pt-8 border-t border-default">
+                        <span class="block text-xs text-secondary font-semibold uppercase mb-4">Connect on Socials</span>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-xl bg-primary border border-default flex items-center justify-center text-secondary hover:text-accent hover:border-accent transition-all duration-300" aria-label="GitHub Profile">
+                                <i data-lucide="github" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-xl bg-primary border border-default flex items-center justify-center text-secondary hover:text-accent hover:border-accent transition-all duration-300" aria-label="LinkedIn Profile">
+                                <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            </a>
+                            <a href="https://twitter.com" target="_blank" class="w-10 h-10 rounded-xl bg-primary border border-default flex items-center justify-center text-secondary hover:text-accent hover:border-accent transition-all duration-300" aria-label="Twitter Profile">
+                                <i data-lucide="twitter" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Column (7 cols) -->
+                <div class="lg:col-span-7 glass-card p-8 rounded-2xl border border-default flex flex-col justify-between">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid sm:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label for="form-name" class="text-sm font-semibold text-secondary">Name</label>
+                                <input type="text" id="form-name" required class="w-full bg-primary border border-default rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-accent transition-colors" placeholder="Your Name">
+                            </div>
+                            <div class="space-y-2">
+                                <label for="form-email" class="text-sm font-semibold text-secondary">Email Address</label>
+                                <input type="email" id="form-email" required class="w-full bg-primary border border-default rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-accent transition-colors" placeholder="yourname@domain.com">
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label for="form-message" class="text-sm font-semibold text-secondary">Message</label>
+                            <textarea id="form-message" rows="6" required class="w-full bg-primary border border-default rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-accent transition-colors resize-none" placeholder="Explain your project goals or queries..."></textarea>
+                        </div>
+
+                        <!-- Notification Container -->
+                        <div id="form-notification" class="hidden p-4 rounded-xl border text-sm font-medium"></div>
+
+                        <button type="submit" class="w-full btn btn-primary py-4 justify-center space-x-2">
+                            <span>Send Message</span>
+                            <i data-lucide="send" class="w-4 h-4"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-default py-12 relative bg-primary">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between space-y-6 sm:space-y-0">
+            <div class="text-center sm:text-left space-y-2">
+                <p class="text-sm text-secondary">&copy; 2026 Faraz Ahmed. All rights reserved.</p>
+                <p class="text-xs text-secondary font-mono">Status: Vibe-coded to perfection &bull; Running on Vercel</p>
+            </div>
+            
+            <!-- Back to top button -->
+            <button id="back-to-top" class="p-3 rounded-full border border-default bg-tertiary text-secondary hover:text-accent hover:border-accent hover:-translate-y-1 transition-all duration-300" aria-label="Scroll to top">
+                <i data-lucide="arrow-up" class="w-5 h-5"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>

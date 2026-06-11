@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faraz Ahmed - Professional Resume</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --primary: #0f172a;
+            --secondary: #475569;
+            --accent: #0284c7;
+            --border: #e2e8f0;
+            --bg: #f8fafc;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--primary);
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .resume-container {
+            max-width: 800px;
+            background: #ffffff;
+            margin: 0 auto;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border);
+        }
+
+        .header-actions {
+            max-width: 800px;
+            margin: 0 auto 1.5rem auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.5rem 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 1px solid var(--border);
+            background: #fff;
+            color: var(--secondary);
+        }
+
+        .btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .btn-primary:hover {
+            background: #0369a1;
+            color: white;
+        }
+
+        .resume-header {
+            border-b: 2px solid var(--primary);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .header-info h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .header-info .title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .header-contacts {
+            font-size: 0.875rem;
+            color: var(--secondary);
+            display: flex;
+            flex-direction: column;
+            gap: 0.35rem;
+            align-items: flex-end;
+            text-align: right;
+        }
+
+        .header-contacts a {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .header-contacts a:hover {
+            color: var(--accent);
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.35rem;
+            margin-bottom: 1rem;
+        }
+
+        .summary {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            text-align: justify;
+        }
+
+        .item {
+            margin-bottom: 1.5rem;
+        }
+
+        .item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.25rem;
+            flex-wrap: wrap;
+        }
+
+        .item-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .item-subtitle {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .item-date {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .item-desc {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-top: 0.35rem;
+        }
+
+        .item-bullets {
+            margin-top: 0.5rem;
+            padding-left: 1.25rem;
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+
+        .item-bullets li {
+            margin-bottom: 0.25rem;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .skill-category-title {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: var(--primary);
+            margin-bottom: 0.35rem;
+        }
+
+        .skill-list {
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+
+        .badge-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-top: 0.25rem;
+        }
+
+        .badge {
+            background-color: #f1f5f9;
+            color: var(--primary);
+            padding: 0.15rem 0.5rem;
+            font-size: 0.75rem;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+            .resume-container {
+                padding: 1.5rem;
+            }
+            .header-contacts {
+                align-items: flex-start;
+                text-align: left;
+            }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Print Override */
+        @media print {
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
+                padding: 0 !important;
+                font-size: 11pt;
+            }
+            .resume-container {
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
+                max-width: 100% !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .resume-header {
+                border-bottom: 2px solid #000 !important;
+            }
+            .section-title {
+                border-bottom: 2px solid #000 !important;
+            }
+            a {
+                color: #000000 !important;
+                text-decoration: none !important;
+            }
+            .badge {
+                border: 1px solid #000 !important;
+                background: transparent !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-actions no-print">
+        <a href="index.html" class="btn">
+            <i data-lucide="arrow-left" class="w-4 h-4 mr-1"></i> Back to Site
+        </a>
+        <button onclick="window.print()" class="btn btn-primary">
+            <i data-lucide="printer" class="w-4 h-4 mr-1"></i> Print / Save as PDF
+        </button>
+    </div>
+
+    <div class="resume-container">
+        <!-- Header -->
+        <header class="resume-header">
+            <div class="header-info">
+                <h1>Faraz Ahmed</h1>
+                <div class="title">AI Systems Engineer & Agentic Workflow Developer</div>
+                <div class="tagline">"Building AI-driven applications and resilient software systems"</div>
+            </div>
+            <div class="header-contacts">
+                <div>Islamabad, Pakistan</div>
+                <div><a href="tel:03337393471">0333-7393471</a></div>
+                <div><a href="mailto:farazahmed54@gmail.com">farazahmed54@gmail.com</a></div>
+                <div><a href="https://github.com" target="_blank">github.com/farazahmed</a></div>
+            </div>
+        </header>
+
+        <!-- Summary -->
+        <section class="section">
+            <h2 class="section-title">Professional Summary</h2>
+            <p class="summary">
+                Results-driven AI Systems Engineer and Agentic Workflow Developer with specialized expertise in constructing robust, production-ready AI software integrations and automated pipelines. Experienced in full-stack B2B SaaS architecture, local token optimizations, and database scaling. Strong focus on accelerating development lifecycles via AI-augmented tooling ("Vibe Coding") and high-pressure constraint delivery.
+            </p>
+        </section>
+
+        <!-- Experience -->
+        <section class="section">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Digital Marketer | Freelance</span>
+                    <span class="item-date">Jan 2024 – Feb 2024</span>
+                </div>
+                <div class="item-subtitle">Self-Employed</div>
+                <ul class="item-bullets">
+                    <li>Built customized Python web-scraping utilities to profile and index target B2B leads.</li>
+                    <li>Designed automated workflows combining n8n webhook handlers and database hooks to capture and route customer responses.</li>
+                    <li>Successfully incorporated AI assistant integrations to automate cold outreach copy customization.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section class="section">
+            <h2 class="section-title">Key Projects</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">AnswerEnginePro (B2B SaaS)</span>
+                    <span class="item-date">Python, Supabase, LLMs</span>
+                </div>
+                <p class="item-desc">
+                    Full-stack Answer Engine Optimization (AEO) tracking system designed to monitor and optimize online brand mentions across Large Language Models (ChatGPT, Claude, Perplexity). Integrated secure database pipelines and custom vector search.
+                </p>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Semantic-Stream (Open Source)</span>
+                    <span class="item-date">Python, PyTorch, Hugging Face</span>
+                </div>
+                <p class="item-desc">
+                    Local token-handling compression engine designed to prune LLM prompt inputs and optimize semantic cache matching. Reduced API token consumption costs by up to 45% while preserving semantic context fidelity.
+                </p>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">chesshub (Community Platform)</span>
+                    <span class="item-date">Python, Supabase, NextJS</span>
+                </div>
+                <p class="item-desc">
+                    Tournament tracking, competitive rankings, and scheduling portal built for the local Pakistani chess community. Implements national competitive Elo calculations.
+                </p>
+            </div>
+        </section>
+
+        <!-- Education -->
+        <section class="section">
+            <h2 class="section-title">Education</h2>
+            
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">IQRA University, Islamabad</span>
+                    <span class="item-date">Feb 2024 – Mar 2028</span>
+                </div>
+                <div class="item-subtitle">Bachelors in Computer Science (BCS)</div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Mazhar Muslim Model School and College</span>
+                    <span class="item-date">Oct 2020 – Jun 2022</span>
+                </div>
+                <div class="item-subtitle">FSc Pre-Engineering</div>
+            </div>
+
+            <div class="item">
+                <div class="item-header">
+                    <span class="item-title">Jinnah Grammar High School</span>
+                    <span class="item-date">Oct 2016 – Mar 2020</span>
+                </div>
+                <div class="item-subtitle">Matriculation (Computer Science)</div>
+            </div>
+        </section>
+
+        <!-- Technical Skills -->
+        <section class="section">
+            <h2 class="section-title">Technical Expertise</h2>
+            <div class="skills-grid">
+                <div>
+                    <div class="skill-category-title">AI & Workflows</div>
+                    <div class="badge-list">
+                        <span class="badge">Claude API</span>
+                        <span class="badge">Google AI Studio</span>
+                        <span class="badge">n8n</span>
+                        <span class="badge">Zapier / Make</span>
+                        <span class="badge">Pipedream</span>
+                        <span class="badge">LangChain</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="skill-category-title">Development & Backend</div>
+                    <div class="badge-list">
+                        <span class="badge">Python</span>
+                        <span class="badge">Supabase / Postgres</span>
+                        <span class="badge">C++</span>
+                        <span class="badge">Java</span>
+                        <span class="badge">Git / GitHub</span>
+                        <span class="badge">Vercel / Replit</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications & Languages -->
+        <div class="skills-grid" style="margin-top: 1rem;">
+            <section class="section" style="margin-bottom: 0;">
+                <h2 class="section-title">Certifications</h2>
+                <div class="skill-list">
+                    <div><strong>AI using Python</strong> - DigiSkills.pk</div>
+                    <div><strong>Digital Marketing</strong> - DigiSkills.pk</div>
+                </div>
+            </section>
+            
+            <section class="section" style="margin-bottom: 0;">
+                <h2 class="section-title">Languages</h2>
+                <div class="badge-list">
+                    <span class="badge">Balochi (Native)</span>
+                    <span class="badge">Urdu (Bilingual)</span>
+                    <span class="badge">English (Fluent)</span>
+                    <span class="badge">Sindhi (Conversational)</span>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+</body>
+</html>
