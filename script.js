@@ -191,13 +191,33 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Simulating submission hook
         displayNotification('Sending message...', 'info');
 
-        setTimeout(() => {
-            displayNotification(`Thank you, ${nameVal}! Your message has been sent successfully.`, 'success');
-            contactForm.reset();
-        }, 1200);
+        fetch("https://formsubmit.co/ajax/farazahmed54@gmail.com", {
+            method: "POST",
+            headers: { 
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                name: nameVal,
+                email: emailVal,
+                message: messageVal
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success === "true" || data.success === true) {
+                displayNotification(`Thank you, ${nameVal}! Your message has been sent successfully.`, 'success');
+                contactForm.reset();
+            } else {
+                displayNotification('Oops! Something went wrong. Please try again.', 'error');
+            }
+        })
+        .catch(error => {
+            console.error('Error submitting form:', error);
+            displayNotification('Could not send message. Please check your connection and try again.', 'error');
+        });
     });
 
     const displayNotification = (msg, type) => {
