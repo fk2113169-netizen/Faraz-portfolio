@@ -200,9 +200,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 "Accept": "application/json"
             },
             body: JSON.stringify({
-                name: nameVal,
-                email: emailVal,
-                message: messageVal
+                _subject: `New Portfolio Message from ${nameVal}`,
+                _replyto: emailVal,
+                "From": emailVal,
+                "Message": messageVal,
+                "Time": new Date().toLocaleString()
             })
         })
         .then(response => response.json())
