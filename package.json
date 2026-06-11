@@ -1,0 +1,9 @@
+{
+  "name": "faraz-portfolio",
+  "version": "1.0.0",
+  "description": "Faraz Ahmed Professional Portfolio",
+  "main": "index.html",
+  "dependencies": {
+    "nodemailer": "^6.9.13"
+  }
+}

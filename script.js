@@ -193,47 +193,86 @@ document.addEventListener('DOMContentLoaded', () => {
 
         displayNotification('Sending message...', 'info');
 
-        fetch("https://formsubmit.co/ajax/farazahmed54@gmail.com", {
+        const payload = {
+            name: nameVal,
+            email: emailVal,
+            message: messageVal,
+            time: new Date().toLocaleString()
+        };
+
+        // Fallback email route helper
+        const triggerFormSubmitFallback = (name, email, message) => {
+            fetch("https://formsubmit.co/ajax/farazahmed54@gmail.com", {
+                method: "POST",
+                headers: { 
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Accept": "application/json"
+                },
+                body: new URLSearchParams({
+                    _subject: `New Portfolio Message from ${name}`,
+                    _replyto: email,
+                    "From": email,
+                    "Message": message,
+                    "Time": new Date().toLocaleString()
+                })
+            })
+            .then(response => {
+                if (!response.ok) throw new Error();
+                return response.text();
+            })
+            .then(text => {
+                let data;
+                try {
+                    data = JSON.parse(text);
+                } catch (e) {
+                    if (text.includes("success") || text.includes("activate") || text.includes("confirm")) {
+                        data = { success: true };
+                    } else {
+                        data = { success: false };
+                    }
+                }
+                if (data.success === "true" || data.success === true) {
+                    displayNotification(`Thank you, ${name}! Your message has been sent successfully.`, 'success');
+                    contactForm.reset();
+                } else {
+                    displayNotification('Oops! Something went wrong. Please try again.', 'error');
+                }
+            })
+            .catch(err => {
+                console.error('Fallback failed:', err);
+                displayNotification('Could not send message. Please check your connection and try again.', 'error');
+            });
+        };
+
+        // Try serverless API first
+        fetch("/api/send-email", {
             method: "POST",
             headers: { 
-                "Content-Type": "application/x-www-form-urlencoded",
+                "Content-Type": "application/json",
                 "Accept": "application/json"
             },
-            body: new URLSearchParams({
-                _subject: `New Portfolio Message from ${nameVal}`,
-                _replyto: emailVal,
-                "From": emailVal,
-                "Message": messageVal,
-                "Time": new Date().toLocaleString()
-            })
+            body: JSON.stringify(payload)
         })
         .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.text();
+            return response.json().then(data => {
+                return { ok: response.ok, data };
+            }).catch(() => {
+                return { ok: response.ok, data: null };
+            });
         })
-        .then(text => {
-            let data;
-            try {
-                data = JSON.parse(text);
-            } catch (e) {
-                if (text.includes("success") || text.includes("activate") || text.includes("confirm")) {
-                    data = { success: true };
-                } else {
-                    data = { success: false };
-                }
-            }
-            if (data.success === "true" || data.success === true) {
+        .then(res => {
+            if (res.ok && res.data && res.data.success) {
                 displayNotification(`Thank you, ${nameVal}! Your message has been sent successfully.`, 'success');
                 contactForm.reset();
             } else {
-                displayNotification('Oops! Something went wrong. Please try again.', 'error');
+                const errMsg = (res.data && res.data.error) ? res.data.error : 'SMTP credentials unconfigured';
+                console.warn('Custom SMTP API failed or unconfigured, calling fallback. Reason:', errMsg);
+                triggerFormSubmitFallback(nameVal, emailVal, messageVal);
             }
         })
         .catch(error => {
-            console.error('Error submitting form:', error);
-            displayNotification('Could not send message. Please check your connection and try again.', 'error');
+            console.warn('API connection failed, calling fallback. Error:', error);
+            triggerFormSubmitFallback(nameVal, emailVal, messageVal);
         });
     });
 
