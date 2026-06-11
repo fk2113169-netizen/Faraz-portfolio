@@ -61,11 +61,18 @@
                      radial-gradient(circle at 90% 80%, rgba(79, 70, 229, 0.04) 0%, rgba(255, 255, 255, 0) 60%);
 }
 
-/* Base Document Reset */
+/* Base Document Reset & Stability Rules */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html {
+    overflow-y: scroll;
+    scrollbar-gutter: stable;
+    width: 100%;
+    height: 100%;
 }
 
 body {
@@ -73,6 +80,17 @@ body {
     color: var(--text-primary);
     font-family: var(--font-sans);
     line-height: 1.5;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+/* Prevent unexpected shifts on media */
+img, video, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 /* Typography Custom Fonts styling */
@@ -283,7 +301,7 @@ h1, h2, h3, h4, h5, h6 {
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid var(--border-color);
     box-shadow: var(--shadow-sm);
-    transition: all var(--transition-normal);
+    transition: border-color var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-normal), background-color var(--transition-normal);
 }
 
 [data-theme="light"] .glass-card {
@@ -307,7 +325,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     font-size: 0.875rem;
     padding: 0.875rem 1.75rem;
-    transition: all var(--transition-normal);
+    transition: background-color var(--transition-normal), border-color var(--transition-normal), color var(--transition-normal), transform var(--transition-normal), box-shadow var(--transition-normal);
     cursor: pointer;
     text-decoration: none;
     border: 1px solid transparent;
@@ -427,7 +445,7 @@ header.scrolled {
     font-size: 0.875rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all var(--transition-normal);
+    transition: background-color var(--transition-normal), border-color var(--transition-normal), color var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 .filter-btn:hover {
@@ -450,6 +468,7 @@ header.scrolled {
 
 .animate-float {
     animation: float 6s ease-in-out infinite;
+    will-change: transform;
 }
 
 @keyframes fadeIn {
@@ -469,7 +488,7 @@ header.scrolled {
 
 /* Hide project cards when filtered */
 .project-card {
-    transition: all 0.4s ease;
+    transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 .project-card.hidden {
     opacity: 0;
@@ -518,4 +537,29 @@ input, textarea {
 }
 ::-webkit-scrollbar-thumb:hover {
     background: var(--text-secondary);
+}
+
+/* Social Links Stability & Custom Brand Colors */
+.social-link {
+    transition: border-color var(--transition-normal), color var(--transition-normal), transform var(--transition-normal), background-color var(--transition-normal);
+}
+
+.social-link:hover {
+    transform: scale(1.08);
+}
+
+.social-link-github:hover {
+    border-color: #f0f6fc;
+    color: #f0f6fc !important;
+}
+
+.social-link-linkedin:hover {
+    border-color: #0A66C2;
+    color: #0A66C2 !important;
+    background-color: rgba(10, 102, 194, 0.05);
+}
+
+.social-link-twitter:hover {
+    border-color: #1DA1F2;
+    color: #1DA1F2 !important;
 }

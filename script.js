@@ -103,9 +103,12 @@ document.addEventListener('DOMContentLoaded', () => {
         radius: 150
     };
 
+    // Cache metrics to avoid layout thrashing
+    let headerHeight = header ? header.offsetHeight : 80;
+
     window.addEventListener('mousemove', (event) => {
         mouse.x = event.x;
-        mouse.y = event.y - (header.offsetHeight / 2); // adjust for header offset
+        mouse.y = event.y - (headerHeight / 2); // adjust for header offset
     });
 
     window.addEventListener('mouseout', () => {
@@ -189,9 +192,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Connect to mouse
             if (mouse.x !== null && mouse.y !== null) {
-                const rect = canvas.getBoundingClientRect();
-                const mX = mouse.x - rect.left;
-                const mY = mouse.y - rect.top;
+                const mX = mouse.x - canvasRect.left;
+                const mY = mouse.y - canvasRect.top;
                 const dx = particles[a].x - mX;
                 const dy = particles[a].y - mY;
                 const distance = Math.sqrt(dx * dx + dy * dy);
@@ -218,14 +220,22 @@ document.addEventListener('DOMContentLoaded', () => {
         animationFrameId = requestAnimationFrame(animateParticles);
     };
 
+    let canvasRect = canvas.getBoundingClientRect();
+
     const resizeCanvas = () => {
         const parent = canvas.parentElement;
         canvas.width = parent.offsetWidth;
         canvas.height = parent.offsetHeight;
+        canvasRect = canvas.getBoundingClientRect();
+        headerHeight = header ? header.offsetHeight : 80;
         initParticles();
     };
 
     window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('scroll', () => {
+        canvasRect = canvas.getBoundingClientRect();
+    }, { passive: true });
+    
     resizeCanvas();
     animateParticles();
 
