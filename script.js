@@ -179,6 +179,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contact-form');
     const formNotification = document.getElementById('form-notification');
 
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const nameVal = document.getElementById('form-name').value.trim();
+        const emailVal = document.getElementById('form-email').value.trim();
+        const messageVal = document.getElementById('form-message').value.trim();
+
+        if (!nameVal || !emailVal || !messageVal) {
+            displayNotification('Please fill in all required fields.', 'error');
+            return;
+        }
+
+        displayNotification('Sending message...', 'info');
+
+        const payload = {
+            name: nameVal,
+            email: emailVal,
+            message: messageVal,
+            time: new Date().toLocaleString()
+        };
+
+        fetch("/api/send-email", {
+            method: "POST",
+            headers: { 
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(payload)
+        })
+        .then(response => {
+            return response.json().then(data => {
+                return { ok: response.ok, status: response.status, data };
+            }).catch(() => {
+                return { ok: response.ok, status: response.status, data: null };
+            });
+        })
+        .then(res => {
+            if (res.ok && res.data && res.data.success) {
+                displayNotification(`Thank you, ${nameVal}! Your message has been sent successfully.`, 'success');
+                contactForm.reset();
+            } else {
+                const errMsg = (res.data && res.data.error) ? res.data.error : 'SMTP/Resend configuration error';
+                console.error('Email dispatch failed:', errMsg);
+                displayNotification(`Failed to send message: ${errMsg}`, 'error');
+            }
+        })
+        .catch(error => {
+            console.error('API connection error:', error);
+            displayNotification('Could not connect to email service. Please try again.', 'error');
+        });
+    });
+
     const displayNotification = (msg, type) => {
         formNotification.classList.remove('hidden', 'bg-green-500/10', 'border-green-500/30', 'text-green-400', 'bg-red-500/10', 'border-red-500/30', 'text-red-400', 'bg-blue-500/10', 'border-blue-500/30', 'text-blue-400');
         

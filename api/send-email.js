@@ -34,7 +34,7 @@ module.exports = async (req, res) => {
             const resend = new Resend(resendApiKey);
             const { data, error } = await resend.emails.send({
                 from: 'onboarding@resend.dev',
-                to: 'farazahmed54@gmail.com',
+                to: 'farazahm54@gmail.com',
                 reply_to: email,
                 subject: `New Portfolio Message from ${name}`,
                 text: `Subject: New Portfolio Message from ${name}\nFrom: ${email}\nMessage:\n${message}\nTime: ${time || new Date().toLocaleString()}\n`
