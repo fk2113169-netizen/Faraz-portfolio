@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateThemeIcon(currentTheme);
 
     // 6. Typwriter Headline Animation
-    const words = ["AI Systems Engineer", "Agentic Workflow Developer", "SaaS Architect", "Vibe Coding Specialist"];
+    const words = ["AI Software Developer", "Autonomous Systems Architect", "B2B SaaS Developer", "Vibe Coding Specialist"];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
