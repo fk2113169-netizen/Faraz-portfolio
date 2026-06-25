@@ -1,1054 +1,971 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faraz Ahmed | AI Software Developer & Autonomous Systems Architect</title>
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Faraz Ahmed - AI Software Developer specializing in complex autonomous systems, agentic workflows, B2B SaaS, and vibe coding using n8n, Supabase, Vercel, and Google AI Studio.">
-    <meta name="keywords" content="Faraz Ahmed, AI Software Developer, AI Agentic Workflows, Autonomous Systems, B2B SaaS, Vibe Coding, n8n, Supabase, Vercel, Google AI Studio, Gemini, Python, Next.js, Islamabad, Pakistan">
-    <meta name="author" content="Faraz Ahmed">
-    <link rel="canonical" href="https://farazahmed.dev">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Faraz Ahmed | AI Software Developer & Autonomous Systems Architect</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Faraz Ahmed - AI Software Developer specializing in complex autonomous systems, agentic workflows, B2B SaaS, and automation pipelines.">
+  <meta name="keywords" content="Faraz Ahmed, AI Developer, Autonomous Systems, B2B SaaS, Agentic Workflows, Vibe Coding, n8n, Supabase, Google AI Studio, Gemini, Python, Islamabad, Pakistan">
+  <meta name="author" content="Faraz Ahmed">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://farazahmed.dev">
-    <meta property="og:title" content="Faraz Ahmed | AI Software Developer & Autonomous Systems Architect">
-    <meta property="og:description" content="Building complex autonomous AI agent networks, production B2B SaaS, and resilient workflow automation pipelines.">
-    <meta property="og:image" content="https://farazahmed.dev/assets/portfolio-preview.jpg">
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Faraz Ahmed | AI Software Developer & Autonomous Systems Architect">
+  <meta property="og:description" content="Building complex autonomous AI agent networks, production B2B SaaS, and resilient workflow automation pipelines.">
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://farazahmed.dev">
-    <meta property="twitter:title" content="Faraz Ahmed | AI Software Developer & Autonomous Systems Architect">
-    <meta property="twitter:description" content="Building complex autonomous AI agent networks, production B2B SaaS, and resilient workflow automation pipelines.">
-    <meta property="twitter:image" content="https://farazahmed.dev/assets/portfolio-preview.jpg">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=1.0.2">
-
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-primary text-primary font-sans antialiased overflow-x-hidden transition-colors duration-300">
+<body data-theme="dark">
 
-    <!-- Navigation Header -->
-    <header class="fixed top-0 left-0 w-full z-50 bg-header border-b border-default backdrop-blur-md transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#home" class="text-2xl font-display font-extrabold tracking-tight bg-gradient bg-clip-text text-transparent hover:opacity-90 transition-opacity">
-                FARAZ<span class="text-accent">.</span>AHMED
-            </a>
+  <!-- Navigation Bar -->
+  <header class="header">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">
+        Faraz<span>.</span>Ahmed
+      </a>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#meta-sec">Bio & Hobbies</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light or dark theme">
+          <!-- Dynamically populated via JS -->
+        </button>
+        <a href="#contact" class="btn btn-primary" style="font-size: 12px; padding: 4px 12px;">Let's Build</a>
+        <button id="menu-toggle" class="menu-toggle-btn" aria-label="Toggle navigation menu">
+          <i data-lucide="menu" id="menu-icon-open"></i>
+        </button>
+      </div>
+    </div>
+  </header>
 
-            <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="#about" class="text-sm font-medium text-secondary hover:text-accent transition-colors">About</a>
-                <a href="#expertise" class="text-sm font-medium text-secondary hover:text-accent transition-colors">Expertise</a>
-                <a href="#projects" class="text-sm font-medium text-secondary hover:text-accent transition-colors">Projects</a>
-                <a href="#education" class="text-sm font-medium text-secondary hover:text-accent transition-colors">Education</a>
-                <a href="#experience" class="text-sm font-medium text-secondary hover:text-accent transition-colors">Experience</a>
-                <a href="#contact" class="text-sm font-medium text-secondary hover:text-accent transition-colors">Contact</a>
-            </nav>
+  <!-- Mobile Menu Drawer -->
+  <div id="mobile-menu" class="mobile-menu">
+    <ul class="mobile-nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#expertise">Expertise</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#meta-sec">Bio & Hobbies</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
 
-            <!-- Theme Toggle and CTA -->
-            <div class="hidden md:flex items-center space-x-6">
-                <!-- LinkedIn Link -->
-                <a href="https://www.linkedin.com/in/faraz-ahmed-78b69b29b" target="_blank" class="social-link social-link-linkedin p-2.5 rounded-xl border border-default bg-tertiary text-secondary" aria-label="Connect on LinkedIn" title="LinkedIn">
-                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                </a>
-                <!-- Light/Dark Mode Switcher -->
-                <button id="theme-toggle" class="p-2.5 rounded-xl border border-default bg-tertiary hover:bg-hover hover:border-accent text-secondary hover:text-accent transition-all duration-300" aria-label="Toggle visual theme">
-                    <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
-                    <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
-                </button>
-                <a href="#contact" class="btn btn-primary btn-sm">Let's Build</a>
-            </div>
+  <!-- Hero Section -->
+  <section id="home" class="section hero-section">
+    <div class="container">
+      <div class="hero-content-stack">
+        <p class="hero-tagline">Available for Freelance & Deployments</p>
+        <h1 class="hero-headline">Engineering Autonomous AI Agent Networks</h1>
+        <p class="hero-subhead" style="min-height: 1.5em; display: flex; justify-content: center; align-items: center;">
+          <span id="typewriter-text"></span><span class="typewriter-cursor">|</span>
+        </p>
+        
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">Explore Projects</a>
+          <a href="resume.html" target="_blank" class="btn btn-secondary">
+            <i data-lucide="download" style="width: 14px; height: 14px; margin-right: 6px; vertical-align: middle;"></i> Download CV
+          </a>
+          <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        </div>
+      </div>
 
-            <!-- Mobile Menu Actions -->
-            <div class="flex items-center space-x-4 md:hidden">
-                <button id="theme-toggle-mobile" class="p-2 rounded-xl border border-default bg-tertiary text-secondary" aria-label="Toggle theme">
-                    <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
-                    <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
-                </button>
-                <button id="menu-btn" class="p-2 rounded-xl border border-default bg-tertiary text-secondary hover:text-accent transition-colors" aria-label="Open menu">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
+      <!-- Quick Metrics Grid -->
+      <div class="parameters-wrapper">
+        <div class="parameters-grid">
+          <div class="param-item">
+            <p class="param-label">Core Projects</p>
+            <p class="param-value">8+ Production</p>
+          </div>
+          <div class="param-item">
+            <p class="param-label">Students Mentored</p>
+            <p class="param-value">200+ Mentored</p>
+          </div>
+          <div class="param-item">
+            <p class="param-label">Deployment Uptime</p>
+            <p class="param-value">99.9% Uptime</p>
+          </div>
+          <div class="param-item">
+            <p class="param-label">Velocity Factor</p>
+            <p class="param-value">10x Acceleration</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Antigravity Terminal Widget -->
+      <div class="terminal-widget">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="terminal-dot close"></span>
+            <span class="terminal-dot minimize"></span>
+            <span class="terminal-dot expand"></span>
+          </div>
+          <div class="terminal-title">antigravity-cli ~ faraz-ahmed-terminal</div>
+          <div style="width: 40px;"></div>
+        </div>
+        <div class="terminal-body" id="terminal-screen">
+          <div class="terminal-line"><span class="terminal-prompt">faraz@architect:~$</span> welcome</div>
+          <div class="terminal-line" style="color: var(--fg-2);">
+            Welcome to the AI Agentic Command Center simulation. 
+            Type a command or select a quick action below to interact with the environment.
+            Type 'help' to see available shell utilities.
+          </div>
+        </div>
+        <div class="terminal-chips">
+          <span class="terminal-chip-label">Quick Actions:</span>
+          <button class="terminal-chip" onclick="executeTerminalChip('diagnose')">Diagnose Agents</button>
+          <button class="terminal-chip" onclick="executeTerminalChip('build')">Build B2B Pipeline</button>
+          <button class="terminal-chip" onclick="executeTerminalChip('deploy')">Deploy EcoMatch</button>
+          <button class="terminal-chip" onclick="executeTerminalChip('about')">Architect Specs</button>
+        </div>
+        <div style="padding: 0 var(--space-4) var(--space-3); background-color: var(--bg-secondary); border-top: 1px solid var(--border-soft); display: flex; align-items: center;">
+          <span class="terminal-prompt" style="font-family: var(--font-mono); font-size: var(--text-sm);">faraz@architect:~$</span>
+          <input type="text" id="terminal-input" class="terminal-input" placeholder="Type command (e.g. help, projects, skills)..." autocomplete="off">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About / Philosophy Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-intro fade-in">
+          <p class="section-label">Philosophy</p>
+          <h2 class="section-title">The "Vibe Coding" & Orchestration Edge</h2>
+          <p class="about-p">
+            I build AI Software systems specializing in constructing complex, autonomous workflows. I bridge the gap between advanced foundation models (Claude, Gemini, GPT) and production-ready B2B SaaS platforms.
+          </p>
+          <p class="about-p">
+            In the era of AI, I champion <strong>"Vibe Coding"</strong>—leveraging agentic development tools to rapidly iterate, prototype, and scale codebases, enabling me to focus on system logic, safety guardrails, and optimal pipeline architectures.
+          </p>
+          <p class="about-p">
+            By orchestrating n8n automation flowcharts, Supabase databases, and Google AI Studio APIs, I design, construct, and launch secure SaaS platforms in fractions of the traditional development lifecycle.
+          </p>
         </div>
 
-        <!-- Mobile Navigation Menu -->
-        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-0 w-full bg-header border-b border-default backdrop-blur-lg transition-all duration-300">
-            <nav class="flex flex-col space-y-4 px-6 py-6">
-                <a href="#about" class="mobile-nav-link">About</a>
-                <a href="#expertise" class="mobile-nav-link">Expertise</a>
-                <a href="#projects" class="mobile-nav-link">Projects</a>
-                <a href="#education" class="mobile-nav-link">Education</a>
-                <a href="#experience" class="mobile-nav-link">Experience</a>
-                <a href="#contact" class="mobile-nav-link">Contact</a>
-                <a href="#contact" class="btn btn-primary text-center">Let's Build</a>
-            </nav>
+        <div class="about-highlights fade-in">
+          <div class="editorial-card">
+            <div class="card-icon"><i data-lucide="cpu"></i></div>
+            <h3 class="card-title">Autonomous Orchestration</h3>
+            <p class="card-description">Designing hierarchical agent networks with clear prompt parameters, automated unit evaluation loops, and self-correcting pipelines.</p>
+          </div>
+
+          <div class="editorial-card">
+            <div class="card-icon"><i data-lucide="git-merge"></i></div>
+            <h3 class="card-title">Event-Driven Automation</h3>
+            <p class="card-description">Configuring self-hosted n8n and make nodes to route Twilio message streams, voice transcripts, and symbiosis ledgers securely.</p>
+          </div>
         </div>
-    </header>
+      </div>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="relative flex items-center pt-20 overflow-hidden">
-        <div class="absolute inset-0 bg-hero-gradient z-1"></div>
+  <!-- Technical Expertise Section -->
+  <section id="expertise" class="section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--space-8);">
+        <p class="section-label">Ecosystem</p>
+        <h2>Technical Architecture</h2>
+      </div>
 
-        <div class="max-w-7xl mx-auto px-6 w-full relative z-10 grid md:grid-cols-12 gap-12 items-center pt-4 pb-12">
-            <div class="md:col-span-12 flex flex-col space-y-6 md:space-y-8 text-left">
-                <div class="inline-flex items-center space-x-2 bg-accent-soft border border-accent-soft-border px-4 py-2 rounded-full w-fit animate-fade-in">
-                    <span class="flex h-2 w-2 relative">
-                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                        <span class="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-                    </span>
-                    <span class="text-xs md:text-sm font-semibold tracking-wider text-accent uppercase font-display">Available for Freelance & Deployments</span>
-                </div>
-
-                <div class="space-y-4">
-                    <h1 class="text-4xl sm:text-5xl md:text-7xl font-display font-extrabold tracking-tight leading-none">
-                        Hi, I'm <span class="bg-gradient bg-clip-text text-transparent">Faraz Ahmed</span>
-                    </h1>
-                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-secondary flex items-center flex-wrap">
-                        I am a&nbsp;<span id="typewriter" class="text-accent border-r-2 border-accent pr-1 animate-pulse"></span>
-                    </h2>
-                </div>
-
-                <p class="text-lg md:text-xl text-secondary max-w-2xl leading-relaxed">
-                    Specialized in autonomous AI agents, production-grade B2B SaaS pipelines, and rapid vibe coding development workflows leveraging next-generation model architectures.
-                </p>
-
-                <!-- Profile Info Block -->
-                <div class="grid sm:grid-cols-2 gap-4 max-w-2xl bg-secondary/50 border border-default p-5 rounded-xl text-sm font-medium">
-                    <div class="space-y-3">
-                        <div class="flex items-center space-x-2.5 text-secondary">
-                            <i data-lucide="user" class="w-4 h-4 text-accent"></i>
-                            <span>Faraz Ahmed</span>
-                        </div>
-                        <div class="flex items-center space-x-2.5 text-secondary">
-                            <i data-lucide="cpu" class="w-4 h-4 text-accent"></i>
-                            <span class="leading-tight">AI Software Developer &amp; Autonomous Systems Architect</span>
-                        </div>
-                        <div class="flex items-center space-x-2.5 text-secondary">
-                            <i data-lucide="map-pin" class="w-4 h-4 text-accent"></i>
-                            <span>Islamabad, Pakistan</span>
-                        </div>
-                    </div>
-                    <div class="space-y-3">
-                        <div class="flex items-center space-x-2.5 text-secondary">
-                            <i data-lucide="mail" class="w-4 h-4 text-accent"></i>
-                            <a href="mailto:farazahmed54@gmail.com" class="hover:text-accent transition-colors">farazahmed54@gmail.com</a>
-                        </div>
-                        <div class="flex items-center space-x-2.5 text-secondary">
-                            <i data-lucide="phone" class="w-4 h-4 text-accent"></i>
-                            <a href="tel:03337393471" class="hover:text-accent transition-colors">03337393471</a>
-                        </div>
-                        <div class="flex items-center space-x-2.5 text-secondary">
-                            <i data-lucide="linkedin" class="w-4 h-4 text-accent"></i>
-                            <a href="https://www.linkedin.com/in/faraz-ahmed-78b69b29b" target="_blank" rel="noopener noreferrer" class="hover:text-accent transition-colors">LinkedIn Profile</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="#projects" class="btn btn-primary flex items-center space-x-2">
-                        <span>View Projects</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                    <a href="resume.html" target="_blank" class="btn btn-secondary flex items-center space-x-2">
-                        <i data-lucide="download" class="w-4 h-4"></i>
-                        <span>Download CV</span>
-                    </a>
-                    <a href="#contact" class="btn btn-tertiary flex items-center space-x-2">
-                        <span>Get in Touch</span>
-                    </a>
-                </div>
+      <div class="expertise-grid">
+        <!-- Card 1 -->
+        <div class="expertise-card fade-in">
+          <div>
+            <div class="expertise-head">
+              <div class="expertise-icon-wrapper"><i data-lucide="cpu"></i></div>
+              <h3 class="card-title" style="margin-bottom:0;">Agentic AI & LLMs</h3>
             </div>
+            <ul class="expertise-list">
+              <li>Claude & Anthropic APIs</li>
+              <li>Google AI Studio (Gemini)</li>
+              <li>LangChain & CrewAI</li>
+              <li>Custom Prompt Pipelines</li>
+            </ul>
+          </div>
+          <div class="expertise-progress">
+            <div class="progress-header">
+              <span>Expertise Depth</span>
+              <span>90%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" data-progress="90%"></div>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- About Me Section -->
-    <section id="about" class="py-24 border-t border-default bg-secondary relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h3 class="text-sm font-semibold tracking-wider text-accent uppercase font-display">About Me</h3>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold">Engineering Intelligent Systems</h2>
-                <div class="w-16 h-1.5 bg-accent mx-auto rounded-full"></div>
+        <!-- Card 2 -->
+        <div class="expertise-card fade-in">
+          <div>
+            <div class="expertise-head">
+              <div class="expertise-icon-wrapper"><i data-lucide="git-merge"></i></div>
+              <h3 class="card-title" style="margin-bottom:0;">Automation & Integration</h3>
             </div>
-
-            <div class="grid lg:grid-cols-12 gap-12 items-start">
-                <!-- Text Area -->
-                <div class="lg:col-span-7 space-y-6">
-                    <h3 class="text-2xl font-display font-bold">My Professional Philosophy</h3>
-                    <p class="text-secondary leading-relaxed">
-                        I am an AI Software Developer specializing in constructing complex, autonomous systems and agentic workflows. I bridge the gap between advanced foundation models and production-ready B2B SaaS platforms.
-                    </p>
-                    <p class="text-secondary leading-relaxed">
-                        In the era of AI, I champion <strong>"Vibe Coding"</strong>—leveraging agentic development tools to rapidly iterate, prototype, and scale codebases, enabling me to focus on system logic, safety guardrails, and optimal pipeline architectures. My engineering toolkit includes n8n, Supabase, Vercel, and Google AI Studio to build resilient systems that scale.
-                    </p>
-                    
-                    <div class="glass-card p-6 border-l-4 border-accent rounded-r-xl">
-                        <h4 class="font-display font-bold text-lg mb-2 flex items-center space-x-2">
-                            <i data-lucide="zap" class="w-5 h-5 text-accent"></i>
-                            <span>The "Vibe Coding" Philosophy</span>
-                        </h4>
-                        <p class="text-sm text-secondary leading-relaxed">
-                            It's not just about typing code; it's about orchestration. By leveraging AI-assisted development tools (like Antigravity and Claude) along with structured deployment runtimes, I design, construct, and launch production SaaS platforms in fractions of the traditional development lifecycle.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Profile Statistics & Badges -->
-                <div class="lg:col-span-5 space-y-8">
-                    <div class="glass-card p-8 rounded-2xl border border-default grid grid-cols-2 gap-6">
-                        <div class="text-center p-4 bg-primary rounded-xl border border-default hover:border-accent transition-colors">
-                            <span class="block text-3xl font-display font-extrabold text-accent">4+</span>
-                            <span class="text-xs text-secondary uppercase font-semibold">Core Projects</span>
-                        </div>
-                        <div class="text-center p-4 bg-primary rounded-xl border border-default hover:border-accent transition-colors">
-                            <span class="block text-3xl font-display font-extrabold text-accent">200+</span>
-                            <span class="text-xs text-secondary uppercase font-semibold">Students Mentored</span>
-                        </div>
-                        <div class="text-center p-4 bg-primary rounded-xl border border-default hover:border-accent transition-colors">
-                            <span class="block text-3xl font-display font-extrabold text-accent">99%</span>
-                            <span class="text-xs text-secondary uppercase font-semibold">Deployment Uptime</span>
-                        </div>
-                        <div class="text-center p-4 bg-primary rounded-xl border border-default hover:border-accent transition-colors">
-                            <span class="block text-3xl font-display font-extrabold text-accent">10x</span>
-                            <span class="text-xs text-secondary uppercase font-semibold">Velocity Boost</span>
-                        </div>
-                    </div>
-
-                    <div class="space-y-4">
-                        <h4 class="font-display font-bold text-lg">Core Focus Areas</h4>
-                        <div class="flex flex-wrap gap-2.5">
-                            <span class="badge badge-accent">Python Development</span>
-                            <span class="badge badge-accent">LLM Architectures</span>
-                            <span class="badge badge-accent">Agentic Workflows</span>
-                            <span class="badge badge-accent">SaaS Backend Logic</span>
-                            <span class="badge badge-accent">System Architecture</span>
-                            <span class="badge badge-accent">Automation (n8n/Make)</span>
-                            <span class="badge badge-accent">Database Design (Supabase)</span>
-                        </div>
-                    </div>
-                </div>
+            <ul class="expertise-list">
+              <li>n8n (Self-hosted & Cloud)</li>
+              <li>Zapier & Make.com</li>
+              <li>Pipedream Event Handlers</li>
+              <li>Webhook Integrations</li>
+            </ul>
+          </div>
+          <div class="expertise-progress">
+            <div class="progress-header">
+              <span>Expertise Depth</span>
+              <span>95%</span>
             </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" data-progress="95%"></div>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Technical Expertise Section -->
-    <section id="expertise" class="py-24 border-t border-default relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h3 class="text-sm font-semibold tracking-wider text-accent uppercase font-display">Technical Expertise</h3>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold">My Tech Ecosystem</h2>
-                <div class="w-16 h-1.5 bg-accent mx-auto rounded-full"></div>
+        <!-- Card 3 -->
+        <div class="expertise-card fade-in">
+          <div>
+            <div class="expertise-head">
+              <div class="expertise-icon-wrapper"><i data-lucide="rocket"></i></div>
+              <h3 class="card-title" style="margin-bottom:0;">Vibe Coding & Deploy</h3>
             </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Agentic AI & LLMs -->
-                <div class="glass-card p-8 rounded-2xl border border-default flex flex-col justify-between hover:border-accent transition-all duration-300 group">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-accent-soft flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
-                            <i data-lucide="cpu" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-display font-bold mb-4">Agentic AI & LLMs</h3>
-                        <p class="text-secondary text-sm mb-6 leading-relaxed">Developing sophisticated prompt engineering pipelines, agentic orchestration, and memory-enhanced systems.</p>
-                        <ul class="space-y-3.5">
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Claude & Anthropic API</li>
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Google AI Studio (Gemini)</li>
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> LangChain & CrewAI</li>
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Custom Agentic Workflows</li>
-                        </ul>
-                    </div>
-                    <!-- Animated skill bar -->
-                    <div class="mt-8 pt-4 border-t border-default">
-                        <div class="flex justify-between text-xs font-semibold mb-2">
-                            <span>Proficiency</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="w-full bg-tertiary h-1.5 rounded-full overflow-hidden">
-                            <div class="bg-gradient h-full rounded-full animate-skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Automation & Integration -->
-                <div class="glass-card p-8 rounded-2xl border border-default flex flex-col justify-between hover:border-accent transition-all duration-300 group">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-accent-soft flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
-                            <i data-lucide="git-merge" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-display font-bold mb-4">Automation & Integration</h3>
-                        <p class="text-secondary text-sm mb-6 leading-relaxed">Designing end-to-end data pipelines and API automations to replace manual workflows with bulletproof integrations.</p>
-                        <ul class="space-y-3.5">
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> n8n (Self-hosted & Cloud)</li>
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Zapier & Make.com</li>
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Pipedream Event Handling</li>
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Webhooks & API Integration</li>
-                        </ul>
-                    </div>
-                    <div class="mt-8 pt-4 border-t border-default">
-                        <div class="flex justify-between text-xs font-semibold mb-2">
-                            <span>Proficiency</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="w-full bg-tertiary h-1.5 rounded-full overflow-hidden">
-                            <div class="bg-gradient h-full rounded-full animate-skill-progress" style="width: 95%"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Vibe Coding & Deployment -->
-                <div class="glass-card p-8 rounded-2xl border border-default flex flex-col justify-between hover:border-accent transition-all duration-300 group">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-accent-soft flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
-                            <i data-lucide="rocket" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-display font-bold mb-4">Vibe Coding & Deployment</h3>
-                        <p class="text-secondary text-sm mb-6 leading-relaxed">Deploying code instantly under active AI augmentation, managing CI/CD pipelines and sandboxed development.</p>
-                        <ul class="space-y-3.5">
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Vercel & Netlify</li>
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Replit Environments</li>
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Antigravity CLI Tooling</li>
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> GitHub Actions & CI/CD</li>
-                        </ul>
-                    </div>
-                    <div class="mt-8 pt-4 border-t border-default">
-                        <div class="flex justify-between text-xs font-semibold mb-2">
-                            <span>Proficiency</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="w-full bg-tertiary h-1.5 rounded-full overflow-hidden">
-                            <div class="bg-gradient h-full rounded-full animate-skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Languages & Backend -->
-                <div class="glass-card p-8 rounded-2xl border border-default flex flex-col justify-between hover:border-accent transition-all duration-300 group">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-accent-soft flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
-                            <i data-lucide="database" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-display font-bold mb-4">Languages & Backend</h3>
-                        <p class="text-secondary text-sm mb-6 leading-relaxed">Writing high-performance server logic, relational database schemas, and robust backend integrations.</p>
-                        <ul class="space-y-3.5">
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Python (FastAPI, Django)</li>
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Supabase / PostgreSQL</li>
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Java & C++</li>
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> RESTful API Architectures</li>
-                        </ul>
-                    </div>
-                    <div class="mt-8 pt-4 border-t border-default">
-                        <div class="flex justify-between text-xs font-semibold mb-2">
-                            <span>Proficiency</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="w-full bg-tertiary h-1.5 rounded-full overflow-hidden">
-                            <div class="bg-gradient h-full rounded-full animate-skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Core Fundamentals -->
-                <div class="glass-card p-8 rounded-2xl border border-default flex flex-col justify-between hover:border-accent transition-all duration-300 group">
-                    <div>
-                        <div class="w-12 h-12 rounded-xl bg-accent-soft flex items-center justify-center text-accent mb-6 group-hover:scale-110 transition-transform">
-                            <i data-lucide="code" class="w-6 h-6"></i>
-                        </div>
-                        <h3 class="text-xl font-display font-bold mb-4">Core Fundamentals</h3>
-                        <p class="text-secondary text-sm mb-6 leading-relaxed">Applying computer science foundation principles to optimize algorithmic complexity and database query execution.</p>
-                        <ul class="space-y-3.5">
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Data Structures & Algorithms</li>
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> System Design Patterns</li>
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Low-level optimization</li>
-                            <li class="flex items-center text-sm"><i data-lucide="chevron-right" class="w-4 h-4 text-accent mr-2"></i> Concurrent Programming</li>
-                        </ul>
-                    </div>
-                    <div class="mt-8 pt-4 border-t border-default">
-                        <div class="flex justify-between text-xs font-semibold mb-2">
-                            <span>Proficiency</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="w-full bg-tertiary h-1.5 rounded-full overflow-hidden">
-                            <div class="bg-gradient h-full rounded-full animate-skill-progress" style="width: 80%"></div>
-                        </div>
-                    </div>
-                </div>
+            <ul class="expertise-list">
+              <li>Vercel & Netlify</li>
+              <li>Replit Development Environments</li>
+              <li>Antigravity CLI Tooling</li>
+              <li>GitHub Actions & CI/CD</li>
+            </ul>
+          </div>
+          <div class="expertise-progress">
+            <div class="progress-header">
+              <span>Expertise Depth</span>
+              <span>85%</span>
             </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" data-progress="85%"></div>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Featured Projects Section -->
-    <section id="projects" class="py-24 border-t border-default bg-secondary relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-12 space-y-4">
-                <h3 class="text-sm font-semibold tracking-wider text-accent uppercase font-display">Portfolio</h3>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold">Featured Projects</h2>
-                <div class="w-16 h-1.5 bg-accent mx-auto rounded-full"></div>
+        <!-- Card 4 -->
+        <div class="expertise-card fade-in">
+          <div>
+            <div class="expertise-head">
+              <div class="expertise-icon-wrapper"><i data-lucide="database"></i></div>
+              <h3 class="card-title" style="margin-bottom:0;">Languages & Backend</h3>
             </div>
-
-            <!-- Project Filters -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="saas">B2B SaaS</button>
-                <button class="filter-btn" data-filter="open-source">Open Source</button>
-                <button class="filter-btn" data-filter="community">Community</button>
-                <button class="filter-btn" data-filter="live-deployment">Live Deployment</button>
+            <ul class="expertise-list">
+              <li>Python (FastAPI, Django)</li>
+              <li>Supabase / PostgreSQL</li>
+              <li>Java & C++ APIs</li>
+              <li>RESTful API Design</li>
+            </ul>
+          </div>
+          <div class="expertise-progress">
+            <div class="progress-header">
+              <span>Expertise Depth</span>
+              <span>90%</span>
             </div>
-
-            <!-- Project Grid -->
-            <div class="grid md:grid-cols-2 gap-8" id="projects-grid">
-                
-                <!-- Project 1: Agentic Engineering Command Center -->
-                <div class="project-card glass-card rounded-2xl border border-default overflow-hidden group" data-category="live-deployment">
-                    <div class="p-8 flex flex-col h-full justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="badge badge-accent">Agent Orchestration</span>
-                                <div class="flex space-x-2">
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Next.js 16</span>
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Prisma</span>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-display font-extrabold mb-3 group-hover:text-accent transition-colors">Agentic Engineering Command Center</h3>
-                            <p class="text-secondary text-sm leading-relaxed mb-6">
-                                Interactive dashboard simulating Google Antigravity 2.0 multi-agent factory orchestration. Express natural language Product Intent, configure strict Constraint &amp; Evaluation Harnesses (automated unit test generators, security sandboxing), run real-time Go-based <code>agy</code> CLI command simulations, and trigger containerized Cloud Build/Run serverless deployment pipelines.
-                            </p>
-                        </div>
-                        <div class="flex items-center justify-between pt-6 border-t border-default">
-                            <span class="text-xs font-semibold text-accent uppercase tracking-wider flex items-center">
-                                <i data-lucide="rocket" class="w-4 h-4 mr-1.5"></i> Live Simulation
-                            </span>
-                            <a href="https://github.com/fk2113169-netizen/Agentic-Engineering-Command-Center" target="_blank" class="text-sm font-semibold hover:text-accent flex items-center transition-colors">
-                                <span>GitHub Repository</span>
-                                <i data-lucide="github" class="w-4 h-4 ml-1.5"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 2: WhatsApp & Voice Automation Platform -->
-                <div class="project-card glass-card rounded-2xl border border-default overflow-hidden group" data-category="saas">
-                    <div class="p-8 flex flex-col h-full justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="badge badge-accent">B2B SaaS</span>
-                                <div class="flex space-x-2">
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">FastAPI</span>
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Streamlit</span>
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Twilio</span>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-display font-extrabold mb-3 group-hover:text-accent transition-colors">WhatsApp &amp; Voice Automation Platform</h3>
-                            <p class="text-secondary text-sm leading-relaxed mb-6">
-                                Production automation engine routing Twilio WhatsApp text streams and speech-to-text IVR voice calls for Pak China Traders. Streamlit control dashboard monitors operational pipelines, confidence-rated invoice processing, dynamic LLM provider swapping (Gemini, Claude, OpenAI), business policies admin panel, and financial Plotly charts.
-                            </p>
-                        </div>
-                        <div class="flex items-center justify-between pt-6 border-t border-default">
-                            <span class="text-xs font-semibold text-accent uppercase tracking-wider flex items-center">
-                                <i data-lucide="server" class="w-4 h-4 mr-1.5"></i> Production Ready
-                            </span>
-                            <a href="https://github.com/fk2113169-netizen/Automation" target="_blank" class="text-sm font-semibold hover:text-accent flex items-center transition-colors">
-                                <span>GitHub Repository</span>
-                                <i data-lucide="github" class="w-4 h-4 ml-1.5"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 3: EcoMatch AI (Waste-to-Market) -->
-                <div class="project-card glass-card rounded-2xl border border-default overflow-hidden group" data-category="saas">
-                    <div class="p-8 flex flex-col h-full justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="badge badge-accent">Industrial Symbiosis</span>
-                                <div class="flex space-x-2">
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Python</span>
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Plotly</span>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-display font-extrabold mb-3 group-hover:text-accent transition-colors">EcoMatch AI Matchmaking</h3>
-                            <p class="text-secondary text-sm leading-relaxed mb-6">
-                                Waste-to-Market symbiosis matchmaking platform connecting industrial waste producers with buyer input streams. Solves information asymmetry through circular analytics metrics (Total Waste Diverted, Scope-3 savings, economic value exchanged), HSL-themed Plotly charts, dynamic symbiosis ledgers, and automated recommendations.
-                            </p>
-                        </div>
-                        <div class="flex items-center justify-between pt-6 border-t border-default">
-                            <span class="text-xs font-semibold text-accent uppercase tracking-wider flex items-center">
-                                <i data-lucide="globe" class="w-4 h-4 mr-1.5"></i> Live Dashboard
-                            </span>
-                            <a href="https://github.com/fk2113169-netizen/Eco-MatchAi" target="_blank" class="text-sm font-semibold hover:text-accent flex items-center transition-colors">
-                                <span>GitHub Repository</span>
-                                <i data-lucide="github" class="w-4 h-4 ml-1.5"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 4: Sequential Coding Bootcamp Builder -->
-                <div class="project-card glass-card rounded-2xl border border-default overflow-hidden group" data-category="open-source">
-                    <div class="p-8 flex flex-col h-full justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="badge badge-accent">Multi-Agent System</span>
-                                <div class="flex space-x-2">
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Python</span>
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Gemini API</span>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-display font-extrabold mb-3 group-hover:text-accent transition-colors">Coding Bootcamp Builder</h3>
-                            <p class="text-secondary text-sm leading-relaxed mb-6">
-                                Sequential multi-agent network (Researcher -> Curriculum Builder -> Reviewer -> Assessor) powered by Google Gemini. Streamlit interface accepts custom parameters to run real-time pedagogical scans, technical roadmap curriculum structuring, and auto-generates downloadable Markdown packages containing course syllabi, quizzes, labs, and capstone criteria.
-                            </p>
-                        </div>
-                        <div class="flex items-center justify-between pt-6 border-t border-default">
-                            <span class="text-xs font-semibold text-accent uppercase tracking-wider flex items-center">
-                                <i data-lucide="star" class="w-4 h-4 mr-1.5"></i> GitHub Core
-                            </span>
-                            <a href="https://github.com/fk2113169-netizen/Multiple-Agent-system" target="_blank" class="text-sm font-semibold hover:text-accent flex items-center transition-colors">
-                                <span>GitHub Repository</span>
-                                <i data-lucide="github" class="w-4 h-4 ml-1.5"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5: HireMe Agent -->
-                <div class="project-card glass-card rounded-2xl border border-default overflow-hidden group" data-category="live-deployment">
-                    <div class="p-8 flex flex-col h-full justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="badge badge-accent">Job Application Assistant</span>
-                                <div class="flex space-x-2">
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Python</span>
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Gemini 2.5</span>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-display font-extrabold mb-3 group-hover:text-accent transition-colors">HireMe Agent</h3>
-                            <p class="text-secondary text-sm leading-relaxed mb-6">
-                                Python-based CV parser and job application agent. Automatically extracts structural skills from PDF resumes using Gemini 2.5, runs LinkedIn &amp; Indeed searches grounded on Google Search parameters, generates match scores (0-100%) with detailed reasoning, and renders a sleek Streamlit Dark Mode interface.
-                            </p>
-                        </div>
-                        <div class="flex items-center justify-between pt-6 border-t border-default">
-                            <span class="text-xs font-semibold text-accent uppercase tracking-wider flex items-center">
-                                <i data-lucide="globe" class="w-4 h-4 mr-1.5"></i> Live Cloud App
-                            </span>
-                            <a href="https://github.com/fk2113169-netizen/Hireme-Agentt" target="_blank" class="text-sm font-semibold hover:text-accent flex items-center transition-colors">
-                                <span>GitHub Repository</span>
-                                <i data-lucide="github" class="w-4 h-4 ml-1.5"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 6: EcoSort AI (Waste Segregation Chatbot) -->
-                <div class="project-card glass-card rounded-2xl border border-default overflow-hidden group" data-category="community">
-                    <div class="p-8 flex flex-col h-full justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="badge badge-accent">AI Image Classifier</span>
-                                <div class="flex space-x-2">
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Python</span>
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Gemini Vision</span>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-display font-extrabold mb-3 group-hover:text-accent transition-colors">EcoSort AI Guide</h3>
-                            <p class="text-secondary text-sm leading-relaxed mb-6">
-                                Interactive waste classifier powered by Gemini Vision models. Takes photo uploads of rubbish or materials, performs vision classification, generates sorting instructions (landfill, compost, recycling rules), maintains history via SQLite, and displays historical segregation analytics.
-                            </p>
-                        </div>
-                        <div class="flex items-center justify-between pt-6 border-t border-default">
-                            <span class="text-xs font-semibold text-accent uppercase tracking-wider flex items-center">
-                                <i data-lucide="users" class="w-4 h-4 mr-1.5"></i> Community Tool
-                            </span>
-                            <a href="https://github.com/fk2113169-netizen/chatbot" target="_blank" class="text-sm font-semibold hover:text-accent flex items-center transition-colors">
-                                <span>GitHub Repository</span>
-                                <i data-lucide="github" class="w-4 h-4 ml-1.5"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 7: Minimal Data Learning System -->
-                <div class="project-card glass-card rounded-2xl border border-default overflow-hidden group" data-category="open-source">
-                    <div class="p-8 flex flex-col h-full justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="badge badge-accent">Few-Shot Inference</span>
-                                <div class="flex space-x-2">
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">FastAPI</span>
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">React</span>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-display font-extrabold mb-3 group-hover:text-accent transition-colors">Minimal Data Learning System</h3>
-                            <p class="text-secondary text-sm leading-relaxed mb-6">
-                                Custom pattern recognition playground with a FastAPI backend and React Vite frontend. Interacts with SQLite to dynamically add input-output examples, builds low-shot prompting contexts for Gemini, and displays learned system rules, prediction answers, and confidence rankings.
-                            </p>
-                        </div>
-                        <div class="flex items-center justify-between pt-6 border-t border-default">
-                            <span class="text-xs font-semibold text-accent uppercase tracking-wider flex items-center">
-                                <i data-lucide="code" class="w-4 h-4 mr-1.5"></i> GitHub Core
-                            </span>
-                            <a href="https://github.com/fk2113169-netizen/semantic-stream" target="_blank" class="text-sm font-semibold hover:text-accent flex items-center transition-colors">
-                                <span>GitHub Repository</span>
-                                <i data-lucide="github" class="w-4 h-4 ml-1.5"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 8: RFP Command Center -->
-                <div class="project-card glass-card rounded-2xl border border-default overflow-hidden group" data-category="saas">
-                    <div class="p-8 flex flex-col h-full justify-between">
-                        <div>
-                            <div class="flex justify-between items-start mb-6">
-                                <span class="badge badge-accent">B2B SaaS</span>
-                                <div class="flex space-x-2">
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Next.js 15</span>
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Prisma</span>
-                                    <span class="text-xs font-mono text-secondary py-1 px-2.5 bg-primary border border-default rounded-md">Gemini</span>
-                                </div>
-                            </div>
-                            <h3 class="text-2xl font-display font-extrabold mb-3 group-hover:text-accent transition-colors">RFP Proposal Command Center</h3>
-                            <p class="text-secondary text-sm leading-relaxed mb-6">
-                                Next.js proposal engineering system parsing governmental or corporate RFP bid documents. Implements compliance scans, extracts requirements matrices, calculates win probabilities based on historical databases, and automatically structures draft narratives using Gemini.
-                            </p>
-                        </div>
-                        <div class="flex items-center justify-between pt-6 border-t border-default">
-                            <span class="text-xs font-semibold text-accent uppercase tracking-wider flex items-center">
-                                <i data-lucide="server" class="w-4 h-4 mr-1.5"></i> Beta Platform
-                            </span>
-                            <a href="#contact" class="text-sm font-semibold hover:text-accent flex items-center transition-colors">
-                                <span>Request Demo</span>
-                                <i data-lucide="arrow-up-right" class="w-4 h-4 ml-1"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" data-progress="90%"></div>
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Education & Experience Grid Section -->
-    <section id="education" class="py-24 border-t border-default relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16">
-                
-                <!-- Education Column -->
-                <div class="space-y-12">
-                    <div class="space-y-4">
-                        <h3 class="text-sm font-semibold tracking-wider text-accent uppercase font-display">Education</h3>
-                        <h2 class="text-3xl font-display font-extrabold">Academic Timeline</h2>
-                        <div class="w-16 h-1 bg-accent rounded-full"></div>
-                    </div>
-
-                    <div class="relative border-l border-default pl-6 sm:pl-8 space-y-12 ml-4">
-                        <!-- IQRA University -->
-                        <div class="relative group">
-                            <!-- Bullet Indicator -->
-                            <div class="absolute -left-10 sm:-left-12 top-1 w-4 h-4 rounded-full bg-primary border-4 border-accent group-hover:bg-accent transition-colors"></div>
-                            
-                            <span class="text-xs font-semibold text-accent bg-accent-soft px-2.5 py-1 rounded-md mb-2 inline-block">Feb 2024 – Mar 2028</span>
-                            <h4 class="text-xl font-display font-bold text-primary">Bachelors in Computer Science</h4>
-                            <p class="text-sm font-semibold text-secondary mb-3">IQRA University, Islamabad</p>
-                            <p class="text-secondary text-sm leading-relaxed">Focusing on core Software Engineering principles, Advanced Database Systems, Artificial Intelligence algorithms, and System Design patterns.</p>
-                        </div>
-
-                        <!-- Mazhar Muslim School -->
-                        <div class="relative group">
-                            <div class="absolute -left-10 sm:-left-12 top-1 w-4 h-4 rounded-full bg-primary border-4 border-accent group-hover:bg-accent transition-colors"></div>
-                            
-                            <span class="text-xs font-semibold text-accent bg-accent-soft px-2.5 py-1 rounded-md mb-2 inline-block">Oct 2020 – Jun 2022</span>
-                            <h4 class="text-xl font-display font-bold text-primary">FSc Pre-Engineering</h4>
-                            <p class="text-sm font-semibold text-secondary mb-3">Mazhar Muslim Model School and College</p>
-                            <p class="text-secondary text-sm leading-relaxed">Academic foundation focused heavily on advanced Mathematics, Analytical Physics, and Chemistry principles.</p>
-                        </div>
-
-                        <!-- Jinnah Grammar -->
-                        <div class="relative group">
-                            <div class="absolute -left-10 sm:-left-12 top-1 w-4 h-4 rounded-full bg-primary border-4 border-accent group-hover:bg-accent transition-colors"></div>
-                            
-                            <span class="text-xs font-semibold text-accent bg-accent-soft px-2.5 py-1 rounded-md mb-2 inline-block">Oct 2016 – Mar 2020</span>
-                            <h4 class="text-xl font-display font-bold text-primary">Matriculation (Science)</h4>
-                            <p class="text-sm font-semibold text-secondary mb-3">Jinnah Grammar High School</p>
-                            <p class="text-secondary text-sm leading-relaxed">Foundational studies in core sciences, mathematics, and analytical principles.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Experience Column -->
-                <div id="experience" class="space-y-12">
-                    <div class="space-y-4">
-                        <h3 class="text-sm font-semibold tracking-wider text-accent uppercase font-display">Experience</h3>
-                        <h2 class="text-3xl font-display font-extrabold">Professional Experience</h2>
-                        <div class="w-16 h-1 bg-accent rounded-full"></div>
-                    </div>
-
-                    <div class="relative border-l border-default pl-6 sm:pl-8 space-y-12 ml-4">
-                        <!-- Experience Card: AI Software Developer -->
-                        <div class="relative group">
-                            <div class="absolute -left-10 sm:-left-12 top-1 w-4 h-4 rounded-full bg-primary border-4 border-accent group-hover:bg-accent transition-colors"></div>
-                            
-                            <span class="text-xs font-semibold text-accent bg-accent-soft px-2.5 py-1 rounded-md mb-2 inline-block">Feb 2024 – Present</span>
-                            <h4 class="text-xl font-display font-bold text-primary">AI Software Developer &amp; Autonomous Systems Architect</h4>
-                            <p class="text-sm font-semibold text-secondary mb-3">Freelance &amp; Independent Creator</p>
-                            <p class="text-secondary text-sm leading-relaxed mb-4">
-                                Designing and deploying production-grade autonomous agent networks, customer support automations, and B2B SaaS portals using FastAPI, Next.js, and Python.
-                            </p>
-                            <ul class="space-y-2 text-sm text-secondary">
-                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-accent mr-2"></i> Engineered B2B agentic integrations involving WhatsApp webhook parsing, IVR speech call flow routing, and confidence-rated invoice parsers.</li>
-                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-accent mr-2"></i> Designed custom state workflows utilizing self-hosted n8n automation loops and Gemini APIs to automate data ingestion and routing.</li>
-                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-accent mr-2"></i> Configured robust database tables, relations, and row policies in Supabase, leveraging Vercel and Google Cloud Run for rapid container releases.</li>
-                            </ul>
-                        </div>
-
-                        <!-- Experience Card 1 -->
-                        <div class="relative group">
-                            <div class="absolute -left-10 sm:-left-12 top-1 w-4 h-4 rounded-full bg-primary border-4 border-accent group-hover:bg-accent transition-colors"></div>
-                            
-                            <span class="text-xs font-semibold text-accent bg-accent-soft px-2.5 py-1 rounded-md mb-2 inline-block">Jan 2024 – Feb 2024</span>
-                            <h4 class="text-xl font-display font-bold text-primary">Digital Marketer | Freelance</h4>
-                            <p class="text-sm font-semibold text-secondary mb-3">Self-Employed</p>
-                            <p class="text-secondary text-sm leading-relaxed mb-4">
-                                Implemented growth-oriented digital marketing strategies and lead generation funnels, integrating bespoke AI tools and APIs to automate content distribution and customer interaction systems.
-                            </p>
-                            <ul class="space-y-2 text-sm text-secondary">
-                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-accent mr-2"></i> Built custom Python web-scrapers for target lead profiling.</li>
-                                <li class="flex items-center"><i data-lucide="check" class="w-4 h-4 text-accent mr-2"></i> Configured n8n database hooks to capture and categorize inbound requests.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
+        <!-- Card 5 -->
+        <div class="expertise-card fade-in">
+          <div>
+            <div class="expertise-head">
+              <div class="expertise-icon-wrapper"><i data-lucide="code"></i></div>
+              <h3 class="card-title" style="margin-bottom:0;">Core Fundamentals</h3>
             </div>
+            <ul class="expertise-list">
+              <li>Data Structures & Algorithms</li>
+              <li>System Design Patterns</li>
+              <li>Low-level optimizations</li>
+              <li>Concurrent Programming</li>
+            </ul>
+          </div>
+          <div class="expertise-progress">
+            <div class="progress-header">
+              <span>Expertise Depth</span>
+              <span>80%</span>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill" data-progress="80%"></div>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Testimonials / Recognition Section -->
-    <section class="py-24 border-t border-default bg-secondary relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h3 class="text-sm font-semibold tracking-wider text-accent uppercase font-display">Recognition</h3>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold">Community Impact & Leadership</h2>
-                <div class="w-16 h-1.5 bg-accent mx-auto rounded-full"></div>
+  <!-- Projects Showcase Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--space-8);">
+        <p class="section-label">Case Studies</p>
+        <h2>Featured System Architectures</h2>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="projects-filter-bar">
+        <button class="filter-chip active" onclick="filterProjects('all')">All</button>
+        <button class="filter-chip" onclick="filterProjects('saas')">B2B SaaS</button>
+        <button class="filter-chip" onclick="filterProjects('open-source')">Open Source</button>
+        <button class="filter-chip" onclick="filterProjects('community')">Community</button>
+        <button class="filter-chip" onclick="filterProjects('live-deployment')">Live Deployment</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <div class="project-card fade-in" data-project-cat="live-deployment">
+          <div class="project-card-header">
+            <span class="project-category-badge">Agent Orchestration</span>
+            <div class="project-tags">
+              <span class="project-tag">Next.js</span>
+              <span class="project-tag">Go</span>
             </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-                <!-- Recognition Item 1 -->
-                <div class="glass-card p-8 rounded-2xl border border-default flex flex-col justify-between hover:border-accent transition-colors duration-300">
-                    <div>
-                        <div class="flex items-center space-x-3 mb-6">
-                            <div class="p-2.5 bg-accent-soft rounded-xl text-accent">
-                                <i data-lucide="users" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-display font-bold text-lg text-primary">Technical Workshop Host</h4>
-                                <p class="text-xs text-secondary font-semibold">GitHub Optimization & Vibe Coding</p>
-                            </div>
-                        </div>
-                        <p class="text-secondary text-sm leading-relaxed mb-6 italic">
-                            "Hosted a specialized interactive technical workshop for over 200 university students. Covered GitHub workflow automation, collaborative branching, and how to utilize AI-augmented 'Vibe Coding' pipelines to double software design velocity while maintaining codebase integrity."
-                        </p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-default">
-                        <span class="text-xs font-mono text-secondary">Audience: 200+ Students</span>
-                        <span class="text-xs font-semibold text-accent uppercase tracking-wider">Education Outreach</span>
-                    </div>
-                </div>
-
-                <!-- Recognition Item 2 -->
-                <div class="glass-card p-8 rounded-2xl border border-default flex flex-col justify-between hover:border-accent transition-colors duration-300">
-                    <div>
-                        <div class="flex items-center space-x-3 mb-6">
-                            <div class="p-2.5 bg-accent-soft rounded-xl text-accent">
-                                <i data-lucide="message-square" class="w-6 h-6"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-display font-bold text-lg text-primary">Community Mentorship</h4>
-                                <p class="text-xs text-secondary font-semibold">Developer Mentoring & Advice</p>
-                            </div>
-                        </div>
-                        <p class="text-secondary text-sm leading-relaxed mb-6 italic">
-                            "Consistently advising peer programmers, college students, and tech enthusiasts on modern engineering standards. Dedicated to building an ecosystem that values logical fundamentals like Data Structures alongside advanced integrations like agentic n8n loops."
-                        </p>
-                    </div>
-                    <div class="flex items-center justify-between pt-4 border-t border-default">
-                        <span class="text-xs font-mono text-secondary">Islamabad Tech Ecosystem</span>
-                        <span class="text-xs font-semibold text-accent uppercase tracking-wider">Mentorship</span>
-                    </div>
-                </div>
+          </div>
+          <div class="project-card-body">
+            <div>
+              <h3 class="project-title">Agentic Command Center</h3>
+              <p class="project-description">
+                Interactive dashboard simulating Google Antigravity 2.0 multi-agent factory orchestration. Configures evaluation harnesses, executes test generation, and simulates containerized serverless deployments.
+              </p>
             </div>
+            <div class="project-card-footer">
+              <button class="btn btn-pill-secondary" onclick="openProjectModal('agentic_command')">View Specs</button>
+              <a href="https://github.com/fk2113169-netizen/Agentic-Engineering-Command-Center" target="_blank" class="project-link">
+                GitHub <i data-lucide="github" style="width:14px; height:14px;"></i>
+              </a>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Hobbies, Skills & Languages Grid Section -->
-    <section class="py-24 border-t border-default relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-12 gap-12 items-start">
-                
-                <!-- Left Column: Certifications & Languages (5 cols) -->
-                <div class="lg:col-span-5 space-y-12">
-                    <!-- Certifications -->
-                    <div class="space-y-6">
-                        <h3 class="text-xl font-display font-bold">Certifications</h3>
-                        <div class="space-y-4">
-                            <div class="glass-card p-4 rounded-xl border border-default flex items-center justify-between">
-                                <div class="flex items-center space-x-3">
-                                    <div class="text-accent bg-accent-soft p-2 rounded-lg">
-                                        <i data-lucide="award" class="w-5 h-5"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-sm font-semibold text-primary">AI using Python</h4>
-                                        <p class="text-xs text-secondary">DigiSkills.pk</p>
-                                    </div>
-                                </div>
-                                <span class="text-xs font-semibold text-secondary bg-primary px-2.5 py-1 rounded-md border border-default">Verified</span>
-                            </div>
-
-                            <div class="glass-card p-4 rounded-xl border border-default flex items-center justify-between">
-                                <div class="flex items-center space-x-3">
-                                    <div class="text-accent bg-accent-soft p-2 rounded-lg">
-                                        <i data-lucide="target" class="w-5 h-5"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="text-sm font-semibold text-primary">Digital Marketing</h4>
-                                        <p class="text-xs text-secondary">DigiSkills.pk</p>
-                                    </div>
-                                </div>
-                                <span class="text-xs font-semibold text-secondary bg-primary px-2.5 py-1 rounded-md border border-default">Verified</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Languages -->
-                    <div class="space-y-6">
-                        <h3 class="text-xl font-display font-bold">Languages</h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="glass-card p-4 rounded-xl border border-default text-center">
-                                <h4 class="font-display font-bold text-sm text-primary">Balochi</h4>
-                                <span class="text-xs text-accent font-semibold">Native Speaker</span>
-                            </div>
-                            <div class="glass-card p-4 rounded-xl border border-default text-center">
-                                <h4 class="font-display font-bold text-sm text-primary">Urdu</h4>
-                                <span class="text-xs text-accent font-semibold">Bilingual Proficiency</span>
-                            </div>
-                            <div class="glass-card p-4 rounded-xl border border-default text-center">
-                                <h4 class="font-display font-bold text-sm text-primary">English</h4>
-                                <span class="text-xs text-accent font-semibold">Professional Working</span>
-                            </div>
-                            <div class="glass-card p-4 rounded-xl border border-default text-center">
-                                <h4 class="font-display font-bold text-sm text-primary">Sindhi</h4>
-                                <span class="text-xs text-accent font-semibold">Conversational</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Hobbies & Interests Grid (7 cols) -->
-                <div class="lg:col-span-7 space-y-6">
-                    <h3 class="text-xl font-display font-bold">Hobbies & Interests</h3>
-                    <p class="text-secondary text-sm mb-6">Beyond systems engineering, these disciplines help keep my cognitive focus sharp and analytical drive highly tuned.</p>
-                    
-                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        <!-- Book Reading -->
-                        <div class="glass-card p-5 rounded-xl border border-default flex flex-col items-center justify-center text-center hover:border-accent transition-colors group">
-                            <div class="text-accent bg-accent-soft p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
-                                <i data-lucide="book-open" class="w-6 h-6"></i>
-                            </div>
-                            <h4 class="font-display font-bold text-sm text-primary">Book Reading</h4>
-                            <span class="text-xs text-secondary mt-1">Tech & Systems theory</span>
-                        </div>
-
-                        <!-- Chess -->
-                        <div class="glass-card p-5 rounded-xl border border-default flex flex-col items-center justify-center text-center hover:border-accent transition-colors group">
-                            <div class="text-accent bg-accent-soft p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
-                                <i data-lucide="crown" class="w-6 h-6"></i>
-                            </div>
-                            <h4 class="font-display font-bold text-sm text-primary">Chess</h4>
-                            <span class="text-xs text-secondary mt-1">Tactical analysis</span>
-                        </div>
-
-                        <!-- Bodybuilding -->
-                        <div class="glass-card p-5 rounded-xl border border-default flex flex-col items-center justify-center text-center hover:border-accent transition-colors group">
-                            <div class="text-accent bg-accent-soft p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
-                                <i data-lucide="dumbbell" class="w-6 h-6"></i>
-                            </div>
-                            <h4 class="font-display font-bold text-sm text-primary">Bodybuilding</h4>
-                            <span class="text-xs text-secondary mt-1">Discipline & Consistency</span>
-                        </div>
-
-                        <!-- Boxing -->
-                        <div class="glass-card p-5 rounded-xl border border-default flex flex-col items-center justify-center text-center hover:border-accent transition-colors group">
-                            <div class="text-accent bg-accent-soft p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
-                                <i data-lucide="shield" class="w-6 h-6"></i>
-                            </div>
-                            <h4 class="font-display font-bold text-sm text-primary">Boxing</h4>
-                            <span class="text-xs text-secondary mt-1">Reflexes & Stasis</span>
-                        </div>
-
-                        <!-- Cricket & Badminton -->
-                        <div class="glass-card p-5 rounded-xl border border-default flex flex-col items-center justify-center text-center hover:border-accent transition-colors group">
-                            <div class="text-accent bg-accent-soft p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
-                                <i data-lucide="activity" class="w-6 h-6"></i>
-                            </div>
-                            <h4 class="font-display font-bold text-sm text-primary">Sports</h4>
-                            <span class="text-xs text-secondary mt-1">Cricket & Badminton</span>
-                        </div>
-
-                        <!-- Photography -->
-                        <div class="glass-card p-5 rounded-xl border border-default flex flex-col items-center justify-center text-center hover:border-accent transition-colors group">
-                            <div class="text-accent bg-accent-soft p-3 rounded-full mb-3 group-hover:scale-110 transition-transform">
-                                <i data-lucide="camera" class="w-6 h-6"></i>
-                            </div>
-                            <h4 class="font-display font-bold text-sm text-primary">Photography</h4>
-                            <span class="text-xs text-secondary mt-1">Details & Perspective</span>
-                        </div>
-                    </div>
-                </div>
-
+        <!-- Project 2 -->
+        <div class="project-card fade-in" data-project-cat="saas">
+          <div class="project-card-header">
+            <span class="project-category-badge">B2B Automation</span>
+            <div class="project-tags">
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">Twilio</span>
             </div>
+          </div>
+          <div class="project-card-body">
+            <div>
+              <h3 class="project-title">WhatsApp & Voice Engine</h3>
+              <p class="project-description">
+                Production-grade automation engine routing voice IVR transcripts and WhatsApp text flows. Monitors invoice transactions, performs LLM processing, and triggers accounting updates.
+              </p>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn btn-pill-secondary" onclick="openProjectModal('whatsapp_engine')">View Specs</button>
+              <a href="https://github.com/fk2113169-netizen/Automation" target="_blank" class="project-link">
+                GitHub <i data-lucide="github" style="width:14px; height:14px;"></i>
+              </a>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-24 border-t border-default bg-secondary relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
-                <h3 class="text-sm font-semibold tracking-wider text-accent uppercase font-display">Contact Me</h3>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-display font-extrabold">Let's Build Something Amazing</h2>
-                <div class="w-16 h-1.5 bg-accent mx-auto rounded-full"></div>
+        <!-- Project 3 -->
+        <div class="project-card fade-in" data-project-cat="saas">
+          <div class="project-card-header">
+            <span class="project-category-badge">Industrial Symbiosis</span>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Plotly</span>
             </div>
-
-            <div class="grid lg:grid-cols-12 gap-12 items-stretch">
-                <!-- Info Column (5 cols) -->
-                <div class="lg:col-span-5 flex flex-col justify-between glass-card p-8 rounded-2xl border border-default">
-                    <div class="space-y-8">
-                        <div>
-                            <h4 class="font-display font-extrabold text-2xl mb-2">Get in Touch</h4>
-                            <p class="text-secondary text-sm leading-relaxed">Have an idea for an AI-powered SaaS platform, or need a workflow automation configured? Send a message and let's coordinate.</p>
-                        </div>
-
-                        <div class="space-y-6">
-                            <!-- Email -->
-                            <div class="flex items-center space-x-4">
-                                <div class="w-11 h-11 bg-accent-soft text-accent rounded-xl flex items-center justify-center">
-                                    <i data-lucide="mail" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <span class="block text-xs text-secondary font-semibold uppercase">Email</span>
-                                    <a href="mailto:farazahmed54@gmail.com" class="text-primary hover:text-accent font-semibold transition-colors">farazahmed54@gmail.com</a>
-                                </div>
-                            </div>
-
-                            <!-- Phone -->
-                            <div class="flex items-center space-x-4">
-                                <div class="w-11 h-11 bg-accent-soft text-accent rounded-xl flex items-center justify-center">
-                                    <i data-lucide="phone" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <span class="block text-xs text-secondary font-semibold uppercase">Phone / WhatsApp</span>
-                                    <a href="tel:03337393471" class="text-primary hover:text-accent font-semibold transition-colors">03337393471</a>
-                                </div>
-                            </div>
-
-                            <!-- Location -->
-                            <div class="flex items-center space-x-4">
-                                <div class="w-11 h-11 bg-accent-soft text-accent rounded-xl flex items-center justify-center">
-                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
-                                </div>
-                                <div>
-                                    <span class="block text-xs text-secondary font-semibold uppercase">Location</span>
-                                    <span class="text-primary font-semibold">Islamabad, Pakistan</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Social Handles -->
-                    <div class="pt-8 border-t border-default">
-                        <span class="block text-xs text-secondary font-semibold uppercase mb-4">Connect on Socials</span>
-                        <div class="flex space-x-4">
-                            <a href="https://github.com" target="_blank" class="social-link social-link-github w-10 h-10 rounded-xl bg-primary border border-default flex items-center justify-center text-secondary" aria-label="GitHub Profile">
-                                <i data-lucide="github" class="w-5 h-5"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/faraz-ahmed-78b69b29b" target="_blank" class="social-link social-link-linkedin w-10 h-10 rounded-xl bg-primary border border-default flex items-center justify-center text-secondary" aria-label="LinkedIn Profile">
-                                <i data-lucide="linkedin" class="w-5 h-5"></i>
-                            </a>
-                            <a href="https://twitter.com" target="_blank" class="social-link social-link-twitter w-10 h-10 rounded-xl bg-primary border border-default flex items-center justify-center text-secondary" aria-label="Twitter Profile">
-                                <i data-lucide="twitter" class="w-5 h-5"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Form Column (7 cols) -->
-                <div class="lg:col-span-7 glass-card p-8 rounded-2xl border border-default flex flex-col justify-between">
-                    <form id="contact-form" class="space-y-6">
-
-                        <div class="grid sm:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label for="form-name" class="text-sm font-semibold text-secondary">Name</label>
-                                <input type="text" name="name" id="form-name" required class="w-full bg-primary border border-default rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-accent transition-colors" placeholder="Your Name">
-                            </div>
-                            <div class="space-y-2">
-                                <label for="form-email" class="text-sm font-semibold text-secondary">Email Address</label>
-                                <input type="email" name="email" id="form-email" required class="w-full bg-primary border border-default rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-accent transition-colors" placeholder="yourname@domain.com">
-                            </div>
-                        </div>
-
-                        <div class="space-y-2">
-                            <label for="form-message" class="text-sm font-semibold text-secondary">Message</label>
-                            <textarea name="message" id="form-message" rows="6" required class="w-full bg-primary border border-default rounded-xl px-4 py-3 text-primary placeholder-secondary focus:outline-none focus:border-accent transition-colors resize-none" placeholder="Explain your project goals or queries..."></textarea>
-                        </div>
-
-                        <!-- Notification Container -->
-                        <div id="form-notification" class="hidden p-4 rounded-xl border text-sm font-medium"></div>
-
-                        <button type="submit" class="w-full btn btn-primary py-4 justify-center space-x-2">
-                            <span>Send Message</span>
-                            <i data-lucide="send" class="w-4 h-4"></i>
-                        </button>
-                    </form>
-                </div>
+          </div>
+          <div class="project-card-body">
+            <div>
+              <h3 class="project-title">EcoMatch AI Matchmaker</h3>
+              <p class="project-description">
+                Waste-to-Market symbiosis connection system solving asymmetry for raw circular metrics. Maps material streams between industrial waste producers and buyer inputs.
+              </p>
             </div>
+            <div class="project-card-footer">
+              <button class="btn btn-pill-secondary" onclick="openProjectModal('ecomatch')">View Specs</button>
+              <a href="https://github.com/fk2113169-netizen/Eco-MatchAi" target="_blank" class="project-link">
+                GitHub <i data-lucide="github" style="width:14px; height:14px;"></i>
+              </a>
+            </div>
+          </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="border-t border-default py-12 relative bg-primary">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between space-y-6 sm:space-y-0">
-            <div class="text-center sm:text-left space-y-2">
-                <p class="text-sm text-secondary">&copy; 2026 Faraz Ahmed. All rights reserved.</p>
-                <p class="text-xs text-secondary font-mono">Status: Vibe-coded to perfection &bull; Running on Vercel</p>
+        <!-- Project 4 -->
+        <div class="project-card fade-in" data-project-cat="open-source">
+          <div class="project-card-header">
+            <span class="project-category-badge">Multi-Agent Bootcamp</span>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Gemini API</span>
             </div>
+          </div>
+          <div class="project-card-body">
+            <div>
+              <h3 class="project-title">Coding Bootcamp Builder</h3>
+              <p class="project-description">
+                Sequential network (Researcher &rarr; Curriculum Designer &rarr; Reviewer &rarr; Assessor) executing pedagogical scans, roadmaps, and automated syllabus packaging.
+              </p>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn btn-pill-secondary" onclick="openProjectModal('bootcamp_builder')">View Specs</button>
+              <a href="https://github.com/fk2113169-netizen/Multiple-Agent-system" target="_blank" class="project-link">
+                GitHub <i data-lucide="github" style="width:14px; height:14px;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card fade-in" data-project-cat="live-deployment">
+          <div class="project-card-header">
+            <span class="project-category-badge">Job Assistant</span>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Gemini</span>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <div>
+              <h3 class="project-title">HireMe Agent</h3>
+              <p class="project-description">
+                Python-based CV parser and job matchmaker assistant. Extracted CV skill variables, searched LinkedIn based on matching profiles, and structured gap analysis feedback.
+              </p>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn btn-pill-secondary" onclick="openProjectModal('hireme')">View Specs</button>
+              <a href="https://github.com/fk2113169-netizen/Hireme-Agentt" target="_blank" class="project-link">
+                GitHub <i data-lucide="github" style="width:14px; height:14px;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card fade-in" data-project-cat="community">
+          <div class="project-card-header">
+            <span class="project-category-badge">Image Classifier</span>
+            <div class="project-tags">
+              <span class="project-tag">Python</span>
+              <span class="project-tag">Gemini Vision</span>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <div>
+              <h3 class="project-title">EcoSort AI Guide</h3>
+              <p class="project-description">
+                Interactive waste sorting visual assistant. Takes refuse photo uploads, triggers vision analysis, outputs ecological sorting instructions, and logs stats in SQLite.
+              </p>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn btn-pill-secondary" onclick="openProjectModal('ecosort')">View Specs</button>
+              <a href="https://github.com/fk2113169-netizen/chatbot" target="_blank" class="project-link">
+                GitHub <i data-lucide="github" style="width:14px; height:14px;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 7 -->
+        <div class="project-card fade-in" data-project-cat="open-source">
+          <div class="project-card-header">
+            <span class="project-category-badge">Pattern recognition</span>
+            <div class="project-tags">
+              <span class="project-tag">FastAPI</span>
+              <span class="project-tag">React</span>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <div>
+              <h3 class="project-title">Minimal Data Learning System</h3>
+              <p class="project-description">
+                Inference sandbox using low-shot prompting. Accepts custom match training pairs, compiles structured instruction context, and executes intent classification.
+              </p>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn btn-pill-secondary" onclick="openProjectModal('semantic_stream')">View Specs</button>
+              <a href="https://github.com/fk2113169-netizen/semantic-stream" target="_blank" class="project-link">
+                GitHub <i data-lucide="github" style="width:14px; height:14px;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8 -->
+        <div class="project-card fade-in" data-project-cat="saas">
+          <div class="project-card-header">
+            <span class="project-category-badge">B2B SaaS</span>
+            <div class="project-tags">
+              <span class="project-tag">Next.js</span>
+              <span class="project-tag">PostgreSQL</span>
+            </div>
+          </div>
+          <div class="project-card-body">
+            <div>
+              <h3 class="project-title">RFP Proposal Command Center</h3>
+              <p class="project-description">
+                Proposal compiler parsing government RFP documents. Scrapes guides, compiles compliance grids, computes success metrics, and packages drafts.
+              </p>
+            </div>
+            <div class="project-card-footer">
+              <button class="btn btn-pill-secondary" onclick="openProjectModal('rfp_center')">View Specs</button>
+              <a href="#contact" class="project-link">
+                Request Demo <i data-lucide="arrow-up-right" style="width:14px; height:14px;"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive Agent Graph Control Center -->
+      <div class="orchestrator-widget fade-in" style="margin-top: var(--space-12);">
+        <div class="widget-header">
+          <div class="widget-title">
+            <i data-lucide="network" style="width:16px; height:16px; vertical-align: middle; margin-right:6px; color:var(--accent);"></i>
+            Agentic Network Orchestrator <span class="badge-live">LIVE SIMULATION</span>
+          </div>
+          <div class="widget-controls">
+            <select id="orchestrator-task" class="select-task">
+              <option value="saas_billing">Task: Deploy B2B Billing Pipeline</option>
+              <option value="ecomatch_matching">Task: Match Waste Streams (EcoMatch)</option>
+              <option value="bootcamp_roadmap">Task: Compile Syllabus Roadmap</option>
+            </select>
+            <button class="btn btn-pill-secondary" style="background-color: var(--accent); color: var(--accent-on); font-weight: 500;" onclick="runOrchestratorTask()">Execute Orchestrator</button>
+          </div>
+        </div>
+        <div class="grid-dashboard">
+          <!-- Visual Node Graph Panel -->
+          <div class="graph-panel">
+            <svg class="graph-svg" viewBox="0 0 400 300">
+              <!-- Connection Paths -->
+              <path id="path-orch-research" d="M 200,60 L 100,150" class="graph-connection" />
+              <path id="path-orch-code" d="M 200,60 L 300,150" class="graph-connection" />
+              <path id="path-research-eval" d="M 100,150 L 200,240" class="graph-connection" />
+              <path id="path-code-eval" d="M 300,150 L 200,240" class="graph-connection" />
+              <path id="path-eval-orch" d="M 200,240 L 200,60" class="graph-connection" />
+
+              <!-- Nodes -->
+              <!-- Orchestrator (Top) -->
+              <g id="node-orchestrator" class="graph-node active" onclick="selectAgentNode('orchestrator')">
+                <circle cx="200" cy="60" r="24" class="node-circle main-node" />
+                <text x="200" y="64" class="node-icon-text">🧠</text>
+                <text x="200" y="100" class="node-label">Orchestrator</text>
+              </g>
+              
+              <!-- Research Agent (Left) -->
+              <g id="node-research" class="graph-node" onclick="selectAgentNode('research')">
+                <circle cx="100" cy="150" r="20" class="node-circle" />
+                <text x="100" y="154" class="node-icon-text">🔍</text>
+                <text x="100" y="190" class="node-label">Researcher</text>
+              </g>
+              
+              <!-- Code Generator (Right) -->
+              <g id="node-codegen" class="graph-node" onclick="selectAgentNode('codegen')">
+                <circle cx="300" cy="150" r="20" class="node-circle" />
+                <text x="300" y="154" class="node-icon-text">💻</text>
+                <text x="300" y="190" class="node-label">Code Architect</text>
+              </g>
+              
+              <!-- Evaluator (Bottom) -->
+              <g id="node-evaluator" class="graph-node" onclick="selectAgentNode('evaluator')">
+                <circle cx="200" cy="240" r="20" class="node-circle" />
+                <text x="200" y="244" class="node-icon-text">🛡️</text>
+                <text x="200" y="280" class="node-label">Linter / Evaluator</text>
+              </g>
+            </svg>
+          </div>
+          
+          <!-- Info Panel / Logs -->
+          <div class="log-panel">
+            <div class="log-panel-header">
+              <span class="active-agent-title" id="selected-agent-name">Orchestrator Node</span>
+              <span class="active-agent-status" id="selected-agent-status">Active</span>
+            </div>
+            <div class="agent-details-box" id="agent-details">
+              <p class="agent-desc">Root decision agent. Formulates sub-tasks, delegates to specialized nodes, compiles results, and handles runtime failures.</p>
+              <div class="agent-stats">
+                <div class="stat-row"><span>Model Bind:</span><strong>Gemini 1.5 Pro / Claude 3.5</strong></div>
+                <div class="stat-row"><span>Execution Context:</span><strong>Infinite Loop Prevention Active</strong></div>
+              </div>
+            </div>
+            <div class="log-terminal" id="orchestrator-logs">
+              <div class="log-line system-msg">[SYSTEM] Agentic console active. Choose a task and click Execute.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Education & Experience Timeline Section -->
+  <section id="education" class="section">
+    <div class="container">
+      <div class="education-experience-grid">
+        <!-- Education Column -->
+        <div class="fade-in">
+          <div class="timeline-column-header">
+            <p class="section-label">Academic</p>
+            <h2>Education Timeline</h2>
+          </div>
+          <div class="timeline-container">
+            <!-- IQRA University -->
+            <div class="timeline-item">
+              <div class="timeline-bullet"></div>
+              <span class="timeline-date">Feb 2024 – Mar 2028</span>
+              <h4 class="timeline-title">Bachelors in Computer Science</h4>
+              <p class="timeline-subtitle">IQRA University, Islamabad</p>
+              <p class="timeline-desc">Focusing on core Software Engineering principles, Advanced Database Systems, Artificial Intelligence algorithms, and System Design patterns.</p>
+            </div>
+
+            <!-- Mazhar Muslim School -->
+            <div class="timeline-item">
+              <div class="timeline-bullet"></div>
+              <span class="timeline-date">Oct 2020 – Jun 2022</span>
+              <h4 class="timeline-title">FSc Pre-Engineering</h4>
+              <p class="timeline-subtitle">Mazhar Muslim Model School and College</p>
+              <p class="timeline-desc">Academic foundation focused heavily on advanced Mathematics, Analytical Physics, and Chemistry principles.</p>
+            </div>
+
+            <!-- Jinnah Grammar -->
+            <div class="timeline-item">
+              <div class="timeline-bullet"></div>
+              <span class="timeline-date">Oct 2016 – Mar 2020</span>
+              <h4 class="timeline-title">Matriculation (Science)</h4>
+              <p class="timeline-subtitle">Jinnah Grammar High School</p>
+              <p class="timeline-desc">Foundational studies in core sciences, mathematics, and analytical principles.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Experience Column -->
+        <div id="experience" class="fade-in">
+          <div class="timeline-column-header">
+            <p class="section-label">Professional</p>
+            <h2>Work Experience</h2>
+          </div>
+          <div class="timeline-container">
+            <!-- Experience 1 -->
+            <div class="timeline-item">
+              <div class="timeline-bullet"></div>
+              <span class="timeline-date">Feb 2024 – Present</span>
+              <h4 class="timeline-title">AI Software Developer &amp; Systems Architect</h4>
+              <p class="timeline-subtitle">Freelance &amp; Independent Creator</p>
+              <p class="timeline-desc">Designing and deploying production-grade autonomous agent networks, customer support automations, and B2B SaaS portals using FastAPI, Next.js, and Python.</p>
+              <ul class="timeline-list">
+                <li>Engineered B2B agentic integrations involving WhatsApp webhook parsing, IVR speech call flow routing, and confidence-rated invoice parsers.</li>
+                <li>Designed custom state workflows utilizing self-hosted n8n automation loops and Gemini APIs to automate data ingestion and routing.</li>
+                <li>Configured robust database tables, relations, and row policies in Supabase, leveraging Vercel and Google Cloud Run for rapid container releases.</li>
+              </ul>
+            </div>
+
+            <!-- Experience 2 -->
+            <div class="timeline-item">
+              <div class="timeline-bullet"></div>
+              <span class="timeline-date">Jan 2024 – Feb 2024</span>
+              <h4 class="timeline-title">Digital Marketer</h4>
+              <p class="timeline-subtitle">Freelance / Self-Employed</p>
+              <p class="timeline-desc">Implemented growth-oriented digital marketing strategies and lead generation funnels, integrating bespoke AI tools and APIs to automate content distribution and customer interaction systems.</p>
+              <ul class="timeline-list">
+                <li>Built custom Python web-scrapers for target lead profiling.</li>
+                <li>Configured n8n database hooks to capture and categorize inbound requests.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recognition Section -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--space-8);">
+        <p class="section-label">Recognition</p>
+        <h2>Community Impact & Leadership</h2>
+      </div>
+      <div class="recognition-grid">
+        <!-- Item 1 -->
+        <div class="recognition-card fade-in">
+          <div>
+            <div class="recognition-head">
+              <div class="recognition-icon-wrapper"><i data-lucide="users"></i></div>
+              <div>
+                <h4 class="recognition-title">Technical Workshop Host</h4>
+                <p class="recognition-subtitle">GitHub Optimization & Vibe Coding</p>
+              </div>
+            </div>
+            <p class="recognition-text">
+              "Hosted a specialized interactive technical workshop for over 200 university students. Covered GitHub workflow automation, collaborative branching, and how to utilize AI-augmented 'Vibe Coding' pipelines to double software design velocity while maintaining codebase integrity."
+            </p>
+          </div>
+          <div class="recognition-footer">
+            <span>Audience: 200+ Students</span>
+            <span class="timeline-date" style="margin: 0;">Education Outreach</span>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="recognition-card fade-in">
+          <div>
+            <div class="recognition-head">
+              <div class="recognition-icon-wrapper"><i data-lucide="message-square"></i></div>
+              <div>
+                <h4 class="recognition-title">Community Mentorship</h4>
+                <p class="recognition-subtitle">Developer Mentoring & Advice</p>
+              </div>
+            </div>
+            <p class="recognition-text">
+              "Consistently advising peer programmers, college students, and tech enthusiasts on modern engineering standards. Dedicated to building an ecosystem that values logical fundamentals like Data Structures alongside advanced integrations like agentic n8n loops."
+            </p>
+          </div>
+          <div class="recognition-footer">
+            <span>Islamabad Tech Ecosystem</span>
+            <span class="timeline-date" style="margin: 0;">Mentorship</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bio & Hobbies section -->
+  <section id="meta-sec" class="section">
+    <div class="container">
+      <div class="meta-grid">
+        <div class="meta-col-left fade-in">
+          <p class="section-label">Qualifications</p>
+          <h2 class="section-title">Certifications & Languages</h2>
+          
+          <div class="meta-item-box">
+            <div class="meta-item-details">
+              <div class="meta-icon-box"><i data-lucide="award"></i></div>
+              <div>
+                <h4 class="meta-title-text">AI using Python</h4>
+                <p class="meta-sub-text">DigiSkills.pk Certification</p>
+              </div>
+            </div>
+            <span class="meta-badge">Verified</span>
+          </div>
+
+          <div class="meta-item-box">
+            <div class="meta-item-details">
+              <div class="meta-icon-box"><i data-lucide="target"></i></div>
+              <div>
+                <h4 class="meta-title-text">Digital Marketing</h4>
+                <p class="meta-sub-text">DigiSkills.pk Certification</p>
+              </div>
+            </div>
+            <span class="meta-badge">Verified</span>
+          </div>
+
+          <!-- Languages box -->
+          <div style="margin-top: var(--space-4);">
+            <p class="section-label" style="margin-bottom:var(--space-2);">Languages</p>
+            <div class="meta-languages-grid">
+              <div class="meta-lang-card">
+                <h4 class="meta-lang-name">Balochi</h4>
+                <span class="meta-lang-fluency">Native Speaker</span>
+              </div>
+              <div class="meta-lang-card">
+                <h4 class="meta-lang-name">Urdu</h4>
+                <span class="meta-lang-fluency">Bilingual Proficiency</span>
+              </div>
+              <div class="meta-lang-card">
+                <h4 class="meta-lang-name">English</h4>
+                <span class="meta-lang-fluency">Professional Working</span>
+              </div>
+              <div class="meta-lang-card">
+                <h4 class="meta-lang-name">Sindhi</h4>
+                <span class="meta-lang-fluency">Conversational</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="meta-col-right fade-in">
+          <p class="section-label">Beyond Tech</p>
+          <h2 class="section-title">Hobbies & Focus Disciplines</h2>
+          <p class="about-p" style="font-size: var(--text-sm); margin-bottom: var(--space-4);">
+            Outside of software systems development, I train in several high-focus activities to keep my critical thinking and strategic capabilities optimized.
+          </p>
+
+          <div class="hobbies-grid">
+            <div class="hobby-cell">
+              <i data-lucide="book-open" class="hobby-icon"></i>
+              <h4 class="hobby-name">Book Reading</h4>
+              <p class="hobby-desc">Tech & Systems theory</p>
+            </div>
+            <div class="hobby-cell">
+              <i data-lucide="crown" class="hobby-icon"></i>
+              <h4 class="hobby-name">Chess</h4>
+              <p class="hobby-desc">Tactical Analysis</p>
+            </div>
+            <div class="hobby-cell">
+              <i data-lucide="dumbbell" class="hobby-icon"></i>
+              <h4 class="hobby-name">Bodybuilding</h4>
+              <p class="hobby-desc">Discipline & Consistency</p>
+            </div>
+            <div class="hobby-cell">
+              <i data-lucide="shield" class="hobby-icon"></i>
+              <h4 class="hobby-name">Boxing</h4>
+              <p class="hobby-desc">Reflexes & Stasis</p>
+            </div>
+            <div class="hobby-cell">
+              <i data-lucide="activity" class="hobby-icon"></i>
+              <h4 class="hobby-name">Sports</h4>
+              <p class="hobby-desc">Cricket & Badminton</p>
+            </div>
+            <div class="hobby-cell">
+              <i data-lucide="camera" class="hobby-icon"></i>
+              <h4 class="hobby-name">Photography</h4>
+              <p class="hobby-desc">Details & Perspective</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--space-8);">
+        <p class="section-label">Connection</p>
+        <h2>Coordinate a Deployment</h2>
+      </div>
+
+      <div class="contact-layout">
+        <!-- Left Panel -->
+        <div class="contact-info-panel fade-in">
+          <div>
+            <h3 style="margin-bottom:var(--space-2);">Get In Touch</h3>
+            <p style="font-size: var(--text-sm); line-height: 1.5;">Have a system design problem or a SaaS pipeline automation that requires specialized configuration? Contact me directly.</p>
             
-            <!-- Footer Social Links -->
-            <div class="flex space-x-4 my-4 sm:my-0">
-                <a href="https://github.com" target="_blank" class="social-link social-link-github w-9 h-9 rounded-lg bg-tertiary border border-default flex items-center justify-center text-secondary" aria-label="GitHub Profile" title="GitHub">
-                    <i data-lucide="github" class="w-5 h-5"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/faraz-ahmed-78b69b29b" target="_blank" class="social-link social-link-linkedin w-9 h-9 rounded-lg bg-tertiary border border-default flex items-center justify-center text-secondary" aria-label="Connect on LinkedIn" title="LinkedIn">
-                    <i data-lucide="linkedin" class="w-5 h-5"></i>
-                </a>
-                <a href="https://twitter.com" target="_blank" class="social-link social-link-twitter w-9 h-9 rounded-lg bg-tertiary border border-default flex items-center justify-center text-secondary" aria-label="Twitter Profile" title="Twitter">
-                    <i data-lucide="twitter" class="w-5 h-5"></i>
-                </a>
+            <div class="contact-method-list">
+              <div class="contact-method-item">
+                <div class="method-icon-box"><i data-lucide="mail"></i></div>
+                <div>
+                  <span class="method-label">Email</span>
+                  <p class="method-value"><a href="mailto:farazahmed54@gmail.com">farazahmed54@gmail.com</a></p>
+                </div>
+              </div>
+              <div class="contact-method-item">
+                <div class="method-icon-box"><i data-lucide="phone"></i></div>
+                <div>
+                  <span class="method-label">Phone / WhatsApp</span>
+                  <p class="method-value"><a href="tel:03337393471">03337393471</a></p>
+                </div>
+              </div>
+              <div class="contact-method-item">
+                <div class="method-icon-box"><i data-lucide="map-pin"></i></div>
+                <div>
+                  <span class="method-label">Base Location</span>
+                  <p class="method-value">Islamabad, Pakistan</p>
+                </div>
+              </div>
             </div>
-            
-            <!-- Back to top button -->
-            <button id="back-to-top" class="p-3 rounded-full border border-default bg-tertiary text-secondary hover:text-accent hover:border-accent hover:-translate-y-1 transition-all duration-300" aria-label="Scroll to top">
-                <i data-lucide="arrow-up" class="w-5 h-5"></i>
-            </button>
-        </div>
-    </footer>
+          </div>
 
-    <!-- Script -->
-    <script src="script.js?v=1.0.2"></script>
+          <div class="social-links-row">
+            <a href="https://github.com" target="_blank" class="social-circle-link" aria-label="Github Profile"><i data-lucide="github" style="width:16px; height:16px;"></i></a>
+            <a href="https://www.linkedin.com/in/faraz-ahmed-78b69b29b" target="_blank" class="social-circle-link" aria-label="LinkedIn Profile"><i data-lucide="linkedin" style="width:16px; height:16px;"></i></a>
+            <a href="https://twitter.com" target="_blank" class="social-circle-link" aria-label="Twitter Profile"><i data-lucide="twitter" style="width:16px; height:16px;"></i></a>
+          </div>
+        </div>
+
+        <!-- Right Form Panel -->
+        <div class="contact-form-panel fade-in">
+          <div id="form-notification" class="notification-banner"></div>
+          <form id="contact-form">
+            <div class="form-group-row">
+              <div class="form-group">
+                <label for="form-name" class="form-label">Full Name</label>
+                <input type="text" id="form-name" class="form-input" placeholder="Faraz Ahmed" required>
+              </div>
+              <div class="form-group">
+                <label for="form-email" class="form-label">Email Address</label>
+                <input type="email" id="form-email" class="form-input" placeholder="farazahmed54@gmail.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="form-message" class="form-label">Message Requirements</label>
+              <textarea id="form-message" class="form-textarea" placeholder="Explain your core project scope, timeline, and tech stack parameters..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary form-submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <!-- Footer Contact Info -->
+      <div class="footer-contact-info">
+        <div class="footer-contact-item">
+          <i data-lucide="user"></i>
+          <span>Faraz Ahmed</span>
+        </div>
+        <div class="footer-contact-item">
+          <i data-lucide="cpu"></i>
+          <span>AI Systems Architect</span>
+        </div>
+        <div class="footer-contact-item">
+          <i data-lucide="map-pin"></i>
+          <span>Islamabad, Pakistan</span>
+        </div>
+        <div class="footer-contact-item">
+          <i data-lucide="mail"></i>
+          <a href="mailto:farazahmed54@gmail.com">farazahmed54@gmail.com</a>
+        </div>
+        <div class="footer-contact-item">
+          <i data-lucide="phone"></i>
+          <a href="tel:03337393471">03337393471</a>
+        </div>
+        <div class="footer-contact-item">
+          <i data-lucide="linkedin"></i>
+          <a href="https://www.linkedin.com/in/faraz-ahmed-78b69b29b" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+      <div class="footer-inner">
+        <p>&copy; 2026 Faraz Ahmed. Architected in Pakistan. All rights reserved.</p>
+        <div class="footer-socials">
+          <button class="scroll-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'});" aria-label="Scroll to top">
+            <i data-lucide="arrow-up" style="width:16px; height:16px;"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Specs Modal Overlay -->
+  <div id="project-modal" class="project-modal">
+    <div class="modal-content">
+      <button class="modal-close-btn" onclick="closeProjectModal()">&times;</button>
+      <div id="modal-project-details">
+        <!-- Dynamic specifications populated via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Core JavaScript Interactions -->
+  <script src="script.js"></script>
 </body>
 </html>
